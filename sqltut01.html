@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQL Injection Tutorial - HackEr404</title>
+  <link rel="stylesheet" href="mystyles.css">
+  <style>
+    .tutorial-container {
+      background-color: #1f1f1f;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
+    }
+    .tutorial-container h1, .tutorial-container h2 {
+      color: #00ffff;
+      margin-bottom: 15px;
+    }
+    .tutorial-container p, .tutorial-container li {
+      color: #ccc;
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+    .tutorial-container ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    pre {
+      background-color: #333;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 15px 0;
+      color: #00ff00;
+    }
+    code {
+      background: #333;
+      padding: 3px 6px;
+      border-radius: 4px;
+      color: #00ff00;
+    }
+    .final-tip {
+      background-color: #263238;
+      padding: 20px;
+      border-left: 5px solid #00ffff;
+      border-radius: 8px;
+      margin-top: 30px;
+      color: #80d8ff;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="404logo.jpg" alt="HACKER 404 Logo">
+  </div>
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="#">Tools</a>
+    <a href="#">Tricks</a>
+    <a href="#">eBooks</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+</nav>
+
+<script>
+const toggleBtn = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+</script>
+
+<div class="tutorial-container">
+  <h1>SQL Injection Tutorial</h1>
+
+  <h2>What is SQL Injection?</h2>
+  <p><strong>SQL Injection (SQLi)</strong> is a web security vulnerability that allows an attacker to interfere with the queries that an application sends to its database. It can allow attackers to view unauthorized data, modify database content, or even take full control over a server.</p>
+
+  <h2>How Does SQL Injection Work?</h2>
+  <p>When a web application fails to properly validate user input, attackers can inject malicious SQL into the query. Example:</p>
+
+  <pre><code>SELECT * FROM users WHERE username = 'admin' AND password = '1234';</code></pre>
+
+  <p>If an attacker inputs:</p>
+  <pre><code>Username: admin' -- 
+Password: (anything)</code></pre>
+
+  <p>The query becomes:</p>
+  <pre><code>SELECT * FROM users WHERE username = 'admin' -- ' AND password = 'anything';</code></pre>
+
+  <p>The <code>--</code> comment operator ignores the rest, allowing unauthorized access!</p>
+
+  <h2>Common Types of SQL Injection</h2>
+  <ul>
+    <li><strong>Authentication Bypass</strong> - Logging in without valid credentials.</li>
+    <li><strong>Data Exfiltration</strong> - Stealing sensitive data.</li>
+    <li><strong>Data Tampering</strong> - Inserting, updating, or deleting data.</li>
+    <li><strong>Remote Code Execution</strong> - Rarely, total server control.</li>
+  </ul>
+
+  <h2>Famous Real-World Attack</h2>
+  <p>In 2008, attackers breached Heartland Payment Systems, compromising over 100 million cards, due to a simple SQL Injection!</p>
+
+  <h2>How to Prevent SQL Injection</h2>
+  <ul>
+    <li><strong>Use Prepared Statements</strong> - Separate SQL code from data input.</li>
+    <li><strong>Validate and Sanitize Inputs</strong> - Always verify user inputs.</li>
+    <li><strong>Use ORM Frameworks</strong> - Let frameworks like Django, Hibernate manage database safely.</li>
+    <li><strong>Least Privilege Principle</strong> - Application should have minimum database permissions.</li>
+    <li><strong>Regular Security Testing</strong> - Scan and pentest your applications regularly.</li>
+  </ul>
+
+  <h2>Example of a Secure Query (PHP - PDO)</h2>
+  <pre><code>
+$stmt = $pdo->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
+$stmt->execute([$username, $password]);
+  </code></pre>
+
+  <div class="final-tip">
+    <h2>Final Tip</h2>
+    <p>SQL Injection is one of the most powerful vulnerabilities. Learn it, understand it, and defend against it to protect your websites and applications!</p>
+  </div>
+</div>
+
+<!-- Instagram Feed Section -->
+   <section id="instagram">
+       <h2>Follow Me on Instagram</h2>
+       <div class="instagram-feed">
+           <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+       </div>
+   </section>
+
+<footer>
+  <p>© 2025 hackEr404 - All rights reserved.</p>
+</footer>
+
+</body>
+</html>
