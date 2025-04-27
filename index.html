@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Navbar</title>
+  <link rel="stylesheet" href="mystyles.css">
+</head>
+
+
+<body>
+<div id="preloader">
+  <h2>Loading HackEr404...</h2>
+</div>
+
+<script>
+// Preloader
+window.addEventListener("load", function(){
+  document.getElementById('preloader').style.display = 'none';
+});
+</script>
+
+<div id="progressbar"></div>
+<script>
+// Scroll Progress Bar
+window.onscroll = function() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("progressbar").style.width = scrolled + "%";
+};
+</script>
+
+<nav>
+  <!-- Logo Left Side -->
+  <div class="logo">
+    <img src="404logo.jpg" alt="HACKER 404 Logo">
+  </div>
+  
+  
+
+  <!-- Menu Middle -->
+  <div class="menu" id="menu">
+    <a href="#">Home</a>
+    <a href="#">Tools</a>
+    <a href="#" >Tricks</a>
+    <a href="#" >eBooks</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    
+  </div>
+
+  <!-- Toggle Button Right Side -->
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  
+  
+</nav>
+
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search tutorials, tools, tricks...">
+</div>
+
+<script>
+document.getElementById('searchInput').addEventListener('keyup', function() {
+  const searchValue = this.value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    if (text.includes(searchValue)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
+</script>
+
+<script>
+const toggleBtn = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+</script>
+
+<div class="slogan" id="myslogan">
+
+<h1 class="intro">Wellcome to HackEr404.</h1>
+<br>
+
+
+<h1 id="typewriter" class="intro"></h1>
+
+<h1 class="disc">
+Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn the best tips, tricks, and tools used by the pros.
+</h1>
+
+<br>
+</div>
+
+
+
+
+
+<!-- Latest Content Section -->
+    <section id="content">
+        <h2>Latest Content</h2>
+        <div class="content-cards">
+            <div class="card">
+                <h3>SQL Injection Tutorial</h3>
+                <p>Learn how attackers exploit SQL injection vulnerabilities and how to defend against them.</p>
+                <a href="sqltut01.html">Read More</a>
+            </div>
+            <div class="card">
+                <h3>Bug Bounty Walkthrough</h3>
+                <p>Step-by-step guide on submitting your first bug bounty report and earning money.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card">
+                <h3>Recon Tools Review</h3>
+                <p>Overview of the best recon tools for security professionals and bug bounty hunters.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="top-tutorials">
+    <h2>Top Tutorials</h2>
+    <ul class="top-tutorials-list">
+    <li><a href="#">How to Perform SQL Injection</a></li>
+    <li><a href="#">Top 10 Recon Tools for Bug Bounty</a></li>
+    <li><a href="#">Beginner's Guide to XSS (Cross-Site Scripting)</a></li>
+    </ul>
+    </section>
+    
+    
+
+    <!-- Instagram Feed Section -->
+    <section id="instagram">
+        <h2>Follow Me on Instagram</h2>
+        <div class="instagram-feed">
+            <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+        </div>
+    </section>
+    
+    <a href="index404.html" class="back-to-home">Home</a>
+    
+   <script>
+   // Selecting search input and all cards
+   const searchInput = document.querySelector('.search-bar input');
+   const cards = document.querySelectorAll('.card');
+   
+   // Create "No results" message dynamically
+   const noResultsMessage = document.createElement('div');
+   noResultsMessage.innerText = "No tutorials found.";
+   noResultsMessage.style.textAlign = "center";
+   noResultsMessage.style.marginTop = "20px";
+   noResultsMessage.style.color = "#ff6666";
+   noResultsMessage.style.display = "none"; // hidden by default
+   
+   // Insert after content cards
+   const contentSection = document.querySelector('.content-cards');
+   contentSection.parentNode.insertBefore(noResultsMessage, contentSection.nextSibling);
+   
+   // Create Reset Button
+   const resetButton = document.createElement('button');
+   resetButton.innerText = "Clear Search";
+   resetButton.style.marginTop = "10px";
+   resetButton.style.padding = "8px 15px";
+   resetButton.style.borderRadius = "20px";
+   resetButton.style.border = "none";
+   resetButton.style.backgroundColor = "#ff6600";
+   resetButton.style.color = "#fff";
+   resetButton.style.cursor = "pointer";
+   resetButton.style.display = "none"; // hidden by default
+   resetButton.style.transition = "0.3s";
+   resetButton.addEventListener('mouseover', function() {
+   this.style.backgroundColor = "#e65c00";
+   });
+   resetButton.addEventListener('mouseout', function() {
+   this.style.backgroundColor = "#ff6600";
+   });
+   document.querySelector('.search-bar').appendChild(resetButton);
+   
+   searchInput.addEventListener('input', function() {
+   const query = this.value.toLowerCase();
+   let visibleCount = 0;
+   
+   cards.forEach(card => {
+   const title = card.querySelector('h3').innerText.toLowerCase();
+   const description = card.querySelector('p').innerText.toLowerCase();
+   
+   // Now search both title and description
+   if (title.includes(query) || description.includes(query)) {
+   card.style.display = 'block';
+   card.style.opacity = '1';
+   card.style.transform = 'scale(1)';
+   visibleCount++;
+   } else {
+   card.style.opacity = '0';
+   card.style.transform = 'scale(0.8)';
+   setTimeout(() => {
+   card.style.display = 'none';
+   }, 200); // smooth animation before hiding
+   }
+   });
+   
+   // Show "No Results" if nothing matches
+   if (visibleCount === 0) {
+   noResultsMessage.style.display = "block";
+   } else {
+   noResultsMessage.style.display = "none";
+   }
+   
+   // Show Reset button if any typing
+   if (query.length > 0) {
+   resetButton.style.display = "inline-block";
+   } else {
+   resetButton.style.display = "none";
+   }
+   });
+   
+   // Reset functionality
+   resetButton.addEventListener('click', function() {
+   searchInput.value = '';
+   cards.forEach(card => {
+   card.style.display = 'block';
+   card.style.opacity = '1';
+   card.style.transform = 'scale(1)';
+   });
+   noResultsMessage.style.display = "none";
+   resetButton.style.display = "none";
+   });
+   </script>
+   
+   <script>
+   // Typewriter Effect
+   const text = 'Where Hacking Reveals The Real Internet';
+   let index = 0;
+   function typeWriter() {
+   if (index < text.length) {
+   document.getElementById('typewriter').innerHTML += text.charAt(index);
+   index++;
+   setTimeout(typeWriter, 100); // typing speed
+   }
+   }
+   typeWriter();
+   </script>
+   
+   
+   
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 hackEr404 - All rights reserved.</p>
+    </footer>
+    
+    
+    
+
+
+
+</body>
+</html>les"></canvas>
+    
+    <script>
+    fetch('content.json')
+    .then(response => response.json())
+    .then(data => {
+    const contentDiv = document.getElementById('dynamic-content');
+    data.forEach(item => {
+    contentDiv.innerHTML += `
+    <div class="card reveal">
+    <h3>${item.title}</h3>
+    <p>${item.desc}</p>
+    <a href="${item.link}">Read More</a>
+    </div>
+    `;
+    });
+    })
+    .catch(error => console.error('Error loading content:', error));
+    </script>
+   
+    
+
+
+
+</body>
+</html>
+<script>
+X, directionY, size, color){
+    this.x = x;
+    this.y = y;
+    this.directionX = directionX;
+    this.directionY = directionY;
+    this.size = size;
+    this.color = color;
+    }
+    
+    Particle.prototype.draw = function(){
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+    };
+    
+    Particle.prototype.update = function(){
+    if(this.x + this.size > canvas.width || this.x - this.size < 0){
+    this.directionX = -this.directionX;
+    }
+    if(this.y + this.size > canvas.height || this.y - this.size < 0){
+    this.directionY = -this.directionY;
+    }
+    this.x += this.directionX;
+    this.y += this.directionY;
+    this.draw();
+    };
+    
+    function init(){
+    particlesArray = [];
+    for (let i = 0; i < numberOfParticles; i++){
+    let size = (Math.random() * 2) + 1;
+    let x = Math.random() * (innerWidth - size * 2);
+    let y = Math.random() * (innerHeight - size * 2);
+    let directionX = (Math.random() * 1) - 0.5;
+    let directionY = (Math.random() * 1) - 0.5;
+    let color = '#00ff00';
+    particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+    }
+    }
+    
+    function animate(){
+    requestAnimationFrame(animate);
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    
+    for (let i = 0; i < particlesArray.length; i++){
+    particlesArray[i].update();
+    }
+    }
+    
+    init();
+    animate();
+    </script>
+    
+
+
+
+</body>
+</html>
