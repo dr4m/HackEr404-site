@@ -301,6 +301,52 @@ footer p {
 }
 
 
+#tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .tool-card {
+      background-color: #444;
+     
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .tool-card h3 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
+    }
+
+    .tool-card p {
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .tool-card a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .tool-card a:hover {
+      text-decoration: underline;
+    }
+
+    .tool-card:hover {
+      transform: scale(1.05);
+    }
+
+
+
+
+
+
 
 
 
