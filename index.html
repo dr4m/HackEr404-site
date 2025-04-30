@@ -123,12 +123,45 @@ Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials
 </div>
 
 
+  
+
+  <!-- Latest Content Section -->
+<section id="content">
+  <h2>Latest Content</h2>
+  <div class="content-cards" id="content-cards">
+    <!-- Dynamic content will be inserted here -->
+  </div>
+</section>
+
+<script>
+  // Fetch the latest content from JSON file
+  fetch('latest-content.json')
+    .then(response => response.json())
+    .then(data => {
+      const contentContainer = document.getElementById('content-cards');
+      data.forEach(item => {
+        const contentDiv = document.createElement('div');
+        contentDiv.classList.add('card');
+        contentDiv.innerHTML = `
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+          <a href="${item.link}">Read More</a>
+        `;
+        contentContainer.appendChild(contentDiv);
+      });
+    })
+    .catch(error => console.log('Error loading content:', error));
+</script>
+
+  
+
+
 
 
 
 <!-- Latest Content Section -->
     <section id="content">
-        <h2>Latest Content</h2>
+        <h2> Content</h2>
         <div class="content-cards">
             <div class="card">
                 <h3>SQL Injection Tutorial</h3>
