@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LH20MJN01Q');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bug Bounty Tutorial - HackEr404</title>
+  <meta name="keywords" content="bug bounty, ethical hacking, penetration testing, cybersecurity, hacker404, hacker 404, find vulnerabilities, security testing, hacking, hacking guide, hacking tutorials, bug bounty tips, hacking tips, cybersecurity roadmap, earning money with bug bounty, bugbounty roadmap, hacker, ethical hacker, cybersecurity hacker,free learning hacking course, free course, free hacking, ">
+  <meta name="author" content="HackEr404">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HackEr404 - Bug Bounty Tutorials">
+  <meta property="og:description" content="Learn Bug Bounty hunting, finding vulnerabilities, and earning rewards with HackEr404.">
+  <meta property="og:image" content="404logo.jpg">
+  <meta property="og:url" content="https://hacker404.site">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HackEr404 - Bug Bounty Tutorials">
+  <meta name="twitter:description" content="Step into the world of Bug Bounties with HackEr404's tutorials and tips.">
+  <meta name="twitter:image" content="404logo.jpg">
+  <meta name="twitter:creator" content="@hacker404_com">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="mystyles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+
+<!-- Progress bar -->
+<div id="progressbar"></div>
+<script>
+window.onscroll = function() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("progressbar").style.width = scrolled + "%";
+};
+</script>
+
+<nav>
+  <div class="logo">
+    <img src="404logo.jpg" alt="HackEr404 Logo">
+  </div>
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="tools.html">Tools</a>
+    <a href="#">Tricks</a>
+    <a href="#">eBooks</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+</nav>
+
+<script>
+const toggleBtn = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+</script>
+
+<div class="tutorial-container">
+  <h1>Bug Bounty Tutorial</h1>
+  <img src="bugbounty1.jpg" alt="Tutorial Preview">
+  
+  <br>
+  <br>
+
+  <h2>What is Bug Bounty?</h2>
+  <p><strong>Bug Bounty</strong> programs are offered by companies where ethical hackers (security researchers) are rewarded for finding vulnerabilities in their systems, websites, or applications.</p>
+
+  <h2>How Does Bug Bounty Work?</h2>
+  <p>Companies launch programs on platforms like HackerOne, Bugcrowd, or invite researchers privately. Hackers test their applications, report valid vulnerabilities, and earn rewards or recognition.</p>
+
+
+  <br>
+  
+  <h2>Common Vulnerabilities Found</h2>
+  
+  <ul>
+    <li><strong>Cross-Site Scripting (XSS)</strong> - Injecting malicious scripts into websites.</li>
+    <li><strong>SQL Injection</strong> - Manipulating database queries.</li>
+    <li><strong>Authentication Bypass</strong> - Logging in as another user without valid credentials.</li>
+    <li><strong>Broken Access Control</strong> - Accessing unauthorized data or actions.</li>
+    <li><strong>Information Disclosure</strong> - Exposing sensitive data.</li>
+  </ul>
+  
+  <br>
+
+  <h2>Steps to Start Bug Bounty Hunting</h2>
+  <ul>
+    <li><strong>Learn Web Application Security Basics</strong> - OWASP Top 10 is a must!</li>
+    <li><strong>Choose a Platform</strong> - Sign up on HackerOne, Bugcrowd, or Synack.</li>
+    <li><strong>Pick a Target</strong> - Start with public programs with clear rules.</li>
+    <li><strong>Use Tools</strong> - Burp Suite, Nmap, Sublist3r, Amass, etc.</li>
+    <li><strong>Document Everything</strong> - Notes are important for reporting.</li>
+    <li><strong>Write Good Reports</strong> - Clear, detailed, and step-by-step reports help you get accepted faster.</li>
+  </ul>
+
+  <h2>Top Platforms to Start With</h2>
+  <ul>
+    <li><a href="https://hackerone.com" target="_blank">HackerOne</a></li>
+    <li><a href="https://bugcrowd.com" target="_blank">Bugcrowd</a></li>
+    <li><a href="https://intigriti.com" target="_blank">Intigriti</a></li>
+    <li><a href="https://yeswehack.com" target="_blank">YesWeHack</a></li>
+  </ul>
+
+  <h2>Final Tips for Success</h2>
+  <ul>
+    <li>Focus on learning, not just on earning!</li>
+    <li>Practice on platforms like <a href="https://portswigger.net/web-security" target="_blank">PortSwigger Web Academy</a>.</li>
+    <li>Be patient — success in bug bounty takes time and persistence.</li>
+    <li>Always follow program scope and rules to stay safe legally.</li>
+  </ul>
+
+  <div class="final-tip">
+    <h2>Final Tip</h2>
+    <p>Bug bounty hunting is a skill that rewards knowledge, persistence, and smart thinking. Stay updated, keep practicing, and enjoy the journey!</p>
+  </div>
+</div>
+
+<!-- Add this inside your <body> just after your Final Tip Section -->
+
+<section id="next-tutorial">
+  <h2>Next Tutorial</h2>
+  <div class="next-tutorial-card">
+    <img src="next-tutorial-sql.jpg" alt="Next Tutorial Preview">
+    <div class="next-tutorial-content">
+      <h3>How to Perform SQL Injection</h3>
+      <p>Master practical SQL Injection attacks with hands-on examples and techniques for bug bounty and pentesting.</p>
+      <a href="sqltut1.html">Read Next →</a>
+    </div>
+  </div>
+</section>
+
+<section id="top-tutorials">
+  <h2>Top Tutorials</h2>
+  <ul class="top-tutorials-list">
+    <li><a href="#">Beginner's Guide to Bug Bounty</a></li>
+    <li><a href="#">Top 5 Tools for Web Pentesting</a></li>
+    <li><a href="#">How to Find Subdomains for Recon</a></li>
+  </ul>
+</section>
+
+
+<section id="instagram">
+  <h2>Follow Me on Instagram</h2>
+  <div class="instagram-feed">
+    <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+  </div>
+</section>
+
+
+
+<footer>
+  <p>© 2025 HackEr404 - All rights reserved.</p>
+</footer>
+
+</body>
+</html>
