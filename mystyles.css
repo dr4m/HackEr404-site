@@ -11,6 +11,39 @@ body {
   color: #fff;
 }
 
+
+ /* Smooth transition for the menu */
+ #menu {
+ display: flex;
+ transition: transform 0.3s ease-in-out;
+ transform: translateX(-100%);
+ }
+ #menu.show {
+ transform: translateX(0);
+ }
+ /* Styling the search bar */
+ .search-container {
+ padding: 10px;
+ background-color: #333;
+ text-align: center;
+ position: relative;
+ z-index: 1000;
+ }
+ .search-container input {
+ width: 80%;
+ padding: 8px;
+ border: none;
+ border-radius: 5px;
+ font-size: 16px;
+ }
+ /* General styling */
+ .menu a {
+ margin: 10px;
+ color: white;
+ text-decoration: none;
+ }
+ 
+
 nav {
   background-color: #1f1f1f;
   display: flex;
@@ -212,25 +245,6 @@ code {
     color: #ff6600;
 }
 
-.search-container {
-    background-color: #1f1f1f;
-    padding: 15px 20px;
-    text-align: center;
-}
-
-.search-container input {
-    width: 60%;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #00ff00;
-    background-color: #121212;
-    color: #fff;
-    border-radius: 5px;
-}
-
-.search-container input::placeholder {
-    color: #aaa;
-}
 
 /* Light theme searchbar */
 .light-theme .search-container {
