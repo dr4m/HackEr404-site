@@ -1,156 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LH20MJN01Q');
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hacker404</title>
-  <link rel="stylesheet" href="mystyles.css">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="HackEr404 is your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn tips, tricks, and tools used by professionals.">
-  <meta name="keywords" content="ethical hacking, bug bounty, cybersecurity, penetration testing, SQL injection, XSS, security tools">
-  <meta name="author" content="HackEr404">
-  <meta name="monetag" content="e53b44ffe4c4cdeae499ef2be6aecccc">
-  <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="mystyles.css">
 </head>
-
 <body>
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <h2>Loading HackEr404...</h2>
-  </div>
-  <script>
-    window.addEventListener("load", () => {
-      document.getElementById('preloader').style.display = 'none';
-    });
-  </script>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <div class="menu">
+            <a href="#tools">Tools</a>
+            <a href="#tutorials">Tutorials</a>
+            <a href="#ebooks">Ebooks</a>
+            <a href="#frontend">Frontend Development</a>
+        </div>
+    </nav>
 
-  <!-- Scroll Progress Bar -->
-  <div id="progressbar"></div>
-  <script>
-    window.onscroll = function() {
-      const winScroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById("progressbar").style.width = scrolled + "%";
-    };
-  </script>
-
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">
-      <img src="404logo.jpg" alt="HACKER 404 Logo">
+    <!-- Search bar at the top of the body -->
+    <div class="search-container">
+        <input type="text" placeholder="Search tutorials, tools, etc." />
     </div>
 
-    <div class="menu" id="menu">
-      <a href="index.html">Home</a>
-      <a href="tools/tools.html">Tools</a>
-      <a href="#">Tricks</a>
-      <a href="#">eBooks</a>
-      <a href="about.html">About</a>
-      <a href="#">Contact</a>
-    </div>
+    <!-- Content Cards -->
+    <section>
+        <div class="content-cards">
+            <div class="card">
+                <h3>Tools</h3>
+                <a href="#tools">Explore Tools</a>
+            </div>
+            <div class="card">
+                <h3>Tutorials</h3>
+                <a href="#tutorials">Explore Tutorials</a>
+            </div>
+            <div class="card">
+                <h3>Ebooks</h3>
+                <a href="#ebooks">Explore Ebooks</a>
+            </div>
+            <div class="card">
+                <h3>Frontend Web Development</h3>
+                <a href="#frontend">Learn Frontend Development</a>
+            </div>
+        </div>
+    </section>
 
-    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-  </nav>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Your Website. All Rights Reserved.</p>
+    </footer>
 
-  <!-- Search Bar -->
-  <div class="search-bar search-container">
-    <input type="text" id="searchInput" placeholder="Search tutorials, tools, tricks...">
-  </div>
-
-  <script>
-    const toggleBtn = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggleBtn.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-  </script>
-
-  <!-- Slogan -->
-  <div class="slogan" id="myslogan">
-    <h1 class="intro">Welcome to HackEr404.</h1>
-    <br>
-    <h1 id="typewriter" class="intro"></h1>
-    <h1 class="disc">
-      Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn the best tips, tricks, and tools used by the pros.
-    </h1>
-    <br>
-  </div>
-
-  <!-- Latest Content Section -->
-  <section id="content">
-    <h2>Latest Content</h2>
-    <div class="content-cards" id="content-cards"></div>
-  </section>
-
-  <script>
-    fetch('content.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('content-cards');
-        data.forEach(item => {
-          const card = document.createElement('div');
-          card.classList.add('card');
-          card.innerHTML = `
-            <h3>${item.title}</h3>
-            <p>${item.desc}</p>
-            <a href="${item.link}">Read More</a>
-          `;
-          container.appendChild(card);
-        });
-      })
-      .catch(err => console.error('Error loading content:', err));
-  </script>
-
-  <!-- Top Tutorials -->
-  <section id="top-tutorials">
-    <h2>Top Tutorials</h2>
-    <ul class="top-tutorials-list">
-      <li><a href="#">How to Perform SQL Injection</a></li>
-      <li><a href="#">Top 10 Recon Tools for Bug Bounty</a></li>
-      <li><a href="#">Beginner's Guide to XSS (Cross-Site Scripting)</a></li>
-    </ul>
-  </section>
-
-  <!-- Instagram Feed -->
-  <section id="instagram">
-    <h2>Follow Me on Instagram</h2>
-    <div class="instagram-feed">
-      <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
-    </div>
-  </section>
-
-  <a href="index404.html" class="back-to-home">Home</a>
-
-  <!-- Typewriter Effect -->
-  <script>
-    const text = 'Where Hacking Reveals The Real Internet';
-    let index = 0;
-    function typeWriter() {
-      if (index < text.length) {
-        document.getElementById('typewriter').innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 100);
-      }
-    }
-    typeWriter();
-  </script>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 hackEr404 - All rights reserved.</p>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
