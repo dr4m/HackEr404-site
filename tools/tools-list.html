@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore top ethical hacking tools with descriptions, tutorials, and tips. Learn how to use popular cybersecurity tools effectively." />
+  <meta name="keywords" content="ethical hacking tools, cybersecurity, penetration testing, Kali Linux tools, hacking software, hacking tutorials, sql injection, nmap, mobile hacking tutorial, social engineering" />
+  <meta name="author" content="hackEr404.site" />
+  <title>Hacking Tools - hackEr404.site</title>
+  <link rel="stylesheet" href="mystyles.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="404logo.jpg" alt="hackEr404 Logo" /></a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="search-container">
+    <input type="text" id="toolSearch" placeholder="Search hacking tools..." onkeyup="searchTools()" />
+  </div>
+
+  <section id="tools">
+    <div class="tool-card">
+      <h3>SQLmap</h3>
+      <p>Automate SQL injection detection and database takeover.</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="tool-card">
+      <h3>Nmap</h3>
+      <p>Powerful network scanner for discovering hosts and services.</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="tool-card">
+      <h3>Burp Suite</h3>
+      <p>Web vulnerability scanner and proxy for penetration testers.</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="tool-card">
+      <h3>Metasploit</h3>
+      <p>Exploit development and testing framework for hackers.</p>
+      <a href="#">Read More</a>
+    </div>
+    <!-- Add more tool cards below -->
+  </section>
+
+  <footer>
+    <p>© 2025 hackEr404.site - All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('show');
+    }
+
+    function searchTools() {
+      const input = document.getElementById("toolSearch").value.toLowerCase();
+      const cards = document.querySelectorAll(".tool-card");
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = title.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
