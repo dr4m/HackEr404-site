@@ -1,186 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LH20MJN01Q');
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hacker404</title>
+  
   <link rel="stylesheet" href="mystyles.css">
+  
+
+  <!-- Character Set -->
+  <meta charset="UTF-8">
+  
+  <!-- Viewport for Responsive Design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Title of the Page -->
+  <title>HackEr404 - Ethical Hacking & Cybersecurity Tutorials</title>
+  
+  <!-- Meta Description for SEO -->
   <meta name="description" content="HackEr404 is your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn tips, tricks, and tools used by professionals.">
+  
+  <!-- Meta Keywords for SEO -->
   <meta name="keywords" content="ethical hacking, bug bounty, cybersecurity, penetration testing, SQL injection, XSS, security tools">
+  
+  <!-- Meta Author -->
   <meta name="author" content="HackEr404">
-  <meta name="monetag" content="e53b44ffe4c4cdeae499ef2be6aecccc">
-  <link rel="icon" type="image/png" href="favicon.png">
- 
+  
+  <!-- Open Graph Tags (for Facebook sharing) -->
+  <meta property="og:title" content="HackEr404 - Ethical Hacking & Cybersecurity Tutorials">
+  <meta property="og:description" content="Learn tips, tricks, and tools for ethical hacking and cybersecurity at HackEr404.">
+  <meta property="og:image" content="404logo.jpg">
+  <meta property="og:url" content="https://hacker404.site">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HackEr404 - Ethical Hacking & Cybersecurity Tutorials">
+  <meta name="twitter:description" content="HackEr404 offers tutorials on ethical hacking, bug bounty, and cybersecurity, with practical tips and tools.">
+  <meta name="twitter:image" content="404logo.jpg">
+  <meta name="twitter:creator" content="@hacker404_com">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Link to External Stylesheets -->
+  <link rel="stylesheet" href="mystyles.css">
+  
+  <!-- Preconnect to speed up external resource loading (for faster performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Link to Google Fonts (if needed) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Apple Touch Icon for mobile devices -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  
+  <!-- Meta Tags for PWA (Progressive Web App) -->
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <!-- Additional meta tags for better mobile and social sharing -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
 </head>
 
+
 <body>
-  <div id="preloader">
-    <h2>Loading HackEr404...</h2>
+<div id="preloader">
+  <h2>Loading HackEr404...</h2>
+</div>
+
+<script>
+// Preloader
+window.addEventListener("load", function(){
+  document.getElementById('preloader').style.display = 'none';
+});
+</script>
+
+<div id="progressbar"></div>
+<script>
+// Scroll Progress Bar
+window.onscroll = function() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("progressbar").style.width = scrolled + "%";
+};
+</script>
+
+<nav>
+  <!-- Logo Left Side -->
+  <div class="logo">
+    <img src="404logo.jpg" alt="HACKER 404 Logo">
+  </div>
+  
+  
+
+  <!-- Menu Middle -->
+  <div class="menu" id="menu">
+    <a href="#">Home</a>
+    <a href="tools.html">Tools</a>
+    <a href="#" >Tutorials</a>
+    <a href="#" >eBooks</a>
+    <a href="about.html">About</a>
+    <a href="#">Contact</a>
+    
   </div>
 
-  <script>
-    window.addEventListener("load", function(){
-      document.getElementById('preloader').style.display = 'none';
-    });
-  </script>
+  <!-- Toggle Button Right Side -->
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  
+  
+</nav>
 
-  <div id="progressbar"></div>
-  <script>
-    window.onscroll = function() {
-      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      let scrolled = (winScroll / height) * 100;
-      document.getElementById("progressbar").style.width = scrolled + "%";
-    };
-  </script>
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search tutorials, tools, tricks...">
+</div>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="logo">
-      <!-- Logo linking to index.html -->
-      <a href="index.html">
-        <img src="404logo.jpg" alt="HACKER 404 Logo">
-      </a>
-    </div>
+<script>
+document.getElementById('searchInput').addEventListener('keyup', function() {
+  const searchValue = this.value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
 
-    <div class="menu" id="menu">
-      <a href="index.html">Home</a>
-      <a href="tools/tools.html">Tools</a>
-      <a href="#">Tricks</a>
-      <a href="#">eBooks</a>
-      <a href="about.html">About</a>
-      <a href="#">Contact</a>
-    </div>
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    if (text.includes(searchValue)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
+</script>
 
-    <!-- Toggle Button Right Side -->
-    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-  </nav>
+<script>
+const toggleBtn = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
 
-  <script>
-    const toggleBtn = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+</script>
 
-    toggleBtn.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
+<div class="slogan" id="myslogan">
 
-    // Close the menu if the user clicks outside of it
-    document.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !toggleBtn.contains(event.target)) {
-        menu.classList.remove('show');
-      }
-    });
+<h1 class="intro">Wellcome to HackEr404.</h1>
+<br>
 
-    // Close the menu if the user scrolls
-    window.addEventListener('scroll', () => {
-      menu.classList.remove('show');
-    });
-  </script>
 
-  <!-- Search Bar Below the Navigation Bar and Above the Welcome Slogan -->
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search tutorials, tools, tricks...">
-  </div>
+<h1 id="typewriter" class="intro"></h1>
 
-  <script>
-    document.getElementById('searchInput').addEventListener('keyup', function() {
-      const searchValue = this.value.toLowerCase();
-      const cards = document.querySelectorAll('.card');
+<h1 class="disc">
+Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn the best tips, tricks, and tools used by the pros.
+</h1>
 
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        if (text.includes(searchValue)) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  </script>
+<br>
+</div>
 
-  <div class="slogan" id="myslogan">
-    <h1 class="intro">Welcome to HackEr404.</h1>
-    <br>
-    <h1 id="typewriter" class="intro"></h1>
-    <h1 class="disc">
-      Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn the best tips, tricks, and tools used by the pros.
-    </h1>
-    <br>
-  </div>
 
-  <!-- Latest Content Section -->
-  <section id="content">
-    <h2>Latest Content</h2>
-    <div class="content-cards">
-      <div class="card">
-        <h3>Top Security Tools</h3>
-        <p>Explore the best security tools used by professionals in the industry.</p>
-        <a href="tools.html">Explore Tools</a>
-      </div>
 
-      <div class="card">
-        <h3>Hacking Tutorials</h3>
-        <p>Learn step-by-step how to perform common hacking techniques and attacks.</p>
-        <a href="tutorials.html">Explore Tutorials</a>
-      </div>
 
-      <div class="card">
-        <h3>eBooks for Hackers</h3>
-        <p>Download free ebooks on ethical hacking, bug bounty, and more.</p>
-        <a href="ebooks.html">Download eBooks</a>
-      </div>
 
-      <div class="card">
-        <h3>Frontend Web Development</h3>
-        <p>Learn the essentials of frontend web development, including HTML, CSS, and JavaScript.</p>
-        <a href="frontend.html">Learn Frontend Development</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="top-tutorials">
+<!-- Latest Content Section -->
+    <section id="content">
+        <h2>Latest Content</h2>
+        <div class="content-cards">
+            <div class="card">
+                <h3>SQL Injection Tutorial</h3>
+                <p>Learn how attackers exploit SQL injection vulnerabilities and how to defend against them.</p>
+                <a href="sqltut01.html">Read More</a>
+            </div>
+            <div class="card">
+                <h3>Bug Bounty Walkthrough</h3>
+                <p>Step-by-step guide on submitting your first bug bounty report and earning money.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card">
+                <h3>Recon Tools Review</h3>
+                <p>Overview of the best recon tools for security professionals and bug bounty hunters.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="top-tutorials">
     <h2>Top Tutorials</h2>
     <ul class="top-tutorials-list">
-      <li><a href="#">How to Perform SQL Injection</a></li>
-      <li><a href="#">Top 10 Recon Tools for Bug Bounty</a></li>
-      <li><a href="#">Beginner's Guide to XSS (Cross-Site Scripting)</a></li>
+    <li><a href="#">How to Perform SQL Injection</a></li>
+    <li><a href="#">Top 10 Recon Tools for Bug Bounty</a></li>
+    <li><a href="#">Beginner's Guide to XSS (Cross-Site Scripting)</a></li>
     </ul>
-  </section>
+    </section>
+    
+    
 
-  <section id="instagram">
-    <h2>Follow Me on Instagram</h2>
-    <div class="instagram-feed">
-      <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
-    </div>
-  </section>
+    <!-- Instagram Feed Section -->
+    <section id="instagram">
+        <h2>Follow Me on Instagram</h2>
+        <div class="instagram-feed">
+            <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+        </div>
+    </section>
+    
+    
+   <script>
+   // Selecting search input and all cards
+   const searchInput = document.querySelector('.search-bar input');
+   const cards = document.querySelectorAll('.card');
+   
+   // Create "No results" message dynamically
+   const noResultsMessage = document.createElement('div');
+   noResultsMessage.innerText = "No tutorials found.";
+   noResultsMessage.style.textAlign = "center";
+   noResultsMessage.style.marginTop = "20px";
+   noResultsMessage.style.color = "#ff6666";
+   noResultsMessage.style.display = "none"; // hidden by default
+   
+   // Insert after content cards
+   const contentSection = document.querySelector('.content-cards');
+   contentSection.parentNode.insertBefore(noResultsMessage, contentSection.nextSibling);
+   
+   // Create Reset Button
+   const resetButton = document.createElement('button');
+   resetButton.innerText = "Clear Search";
+   resetButton.style.marginTop = "10px";
+   resetButton.style.padding = "8px 15px";
+   resetButton.style.borderRadius = "20px";
+   resetButton.style.border = "none";
+   resetButton.style.backgroundColor = "#ff6600";
+   resetButton.style.color = "#fff";
+   resetButton.style.cursor = "pointer";
+   resetButton.style.display = "none"; // hidden by default
+   resetButton.style.transition = "0.3s";
+   resetButton.addEventListener('mouseover', function() {
+   this.style.backgroundColor = "#e65c00";
+   });
+   resetButton.addEventListener('mouseout', function() {
+   this.style.backgroundColor = "#ff6600";
+   });
+   document.querySelector('.search-bar').appendChild(resetButton);
+   
+   searchInput.addEventListener('input', function() {
+   const query = this.value.toLowerCase();
+   let visibleCount = 0;
+   
+   cards.forEach(card => {
+   const title = card.querySelector('h3').innerText.toLowerCase();
+   const description = card.querySelector('p').innerText.toLowerCase();
+   
+   // Now search both title and description
+   if (title.includes(query) || description.includes(query)) {
+   card.style.display = 'block';
+   card.style.opacity = '1';
+   card.style.transform = 'scale(1)';
+   visibleCount++;
+   } else {
+   card.style.opacity = '0';
+   card.style.transform = 'scale(0.8)';
+   setTimeout(() => {
+   card.style.display = 'none';
+   }, 200); // smooth animation before hiding
+   }
+   });
+   
+   // Show "No Results" if nothing matches
+   if (visibleCount === 0) {
+   noResultsMessage.style.display = "block";
+   } else {
+   noResultsMessage.style.display = "none";
+   }
+   
+   // Show Reset button if any typing
+   if (query.length > 0) {
+   resetButton.style.display = "inline-block";
+   } else {
+   resetButton.style.display = "none";
+   }
+   });
+   
+   // Reset functionality
+   resetButton.addEventListener('click', function() {
+   searchInput.value = '';
+   cards.forEach(card => {
+   card.style.display = 'block';
+   card.style.opacity = '1';
+   card.style.transform = 'scale(1)';
+   });
+   noResultsMessage.style.display = "none";
+   resetButton.style.display = "none";
+   });
+   </script>
+   
+   <script>
+   // Typewriter Effect
+   const text = 'Where Hacking Reveals The Real Internet';
+   let index = 0;
+   function typeWriter() {
+   if (index < text.length) {
+   document.getElementById('typewriter').innerHTML += text.charAt(index);
+   index++;
+   setTimeout(typeWriter, 100); // typing speed
+   }
+   }
+   typeWriter();
+   </script>
+   
+   
+   
 
-  <a href="index404.html" class="back-to-home">Home</a>
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 hackEr404 - All rights reserved.</p>
+    </footer>
 
-  <footer>
-    <p>© 2025 hackEr404 - All rights reserved.</p>
-  </footer>
 
-  <script>
-    // Typewriter Effect
-    const text = 'Where Hacking Reveals The Real Internet';
-    let index = 0;
-    function typeWriter() {
-      if (index < text.length) {
-        document.getElementById('typewriter').innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 100); // typing speed
-      }
-    }
-    typeWriter();
-  </script>
 </body>
 </html>
