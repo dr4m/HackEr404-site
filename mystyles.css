@@ -57,6 +57,29 @@ nav {
   height: 50px;
 }
 
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  color: #00ffff;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  display: none;
+}
 
 .intro {
     font-size: 30px;
@@ -487,4 +510,4 @@ footer p {
   .menu-toggle {
     display: block;
   }
-}
+    }
