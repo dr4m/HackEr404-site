@@ -1,59 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
-    <link rel="stylesheet" href="mystyles.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LH20MJN01Q');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hacker404</title>
+  <link rel="stylesheet" href="mystyles.css">
+  <meta name="description" content="HackEr404 is your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn tips, tricks, and tools used by professionals.">
+  <meta name="keywords" content="ethical hacking, bug bounty, cybersecurity, penetration testing, SQL injection, XSS, security tools">
+  <meta name="author" content="HackEr404">
+  <meta name="monetag" content="e53b44ffe4c4cdeae499ef2be6aecccc">
+  <link rel="icon" type="image/png" href="favicon.png">
+ 
 </head>
+
 <body>
+  <div id="preloader">
+    <h2>Loading HackEr404...</h2>
+  </div>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            <a href="index.html"><img src="logo.png" alt="Logo"></a>
-        </div>
-        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
-        <div class="menu">
-            <a href="#tools">Tools</a>
-            <a href="#tutorials">Tutorials</a>
-            <a href="#ebooks">Ebooks</a>
-            <a href="#frontend">Frontend Development</a>
-        </div>
-    </nav>
+  <script>
+    window.addEventListener("load", function(){
+      document.getElementById('preloader').style.display = 'none';
+    });
+  </script>
 
-    <!-- Search bar at the top of the body -->
-    <div class="search-container">
-        <input type="text" placeholder="Search tutorials, tools, etc." />
+  <div id="progressbar"></div>
+  <script>
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressbar").style.width = scrolled + "%";
+    };
+  </script>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <!-- Logo linking to index.html -->
+      <a href="index.html">
+        <img src="404logo.jpg" alt="HACKER 404 Logo">
+      </a>
     </div>
 
-    <!-- Content Cards -->
-    <section>
-        <div class="content-cards">
-            <div class="card">
-                <h3>Tools</h3>
-                <a href="#tools">Explore Tools</a>
-            </div>
-            <div class="card">
-                <h3>Tutorials</h3>
-                <a href="#tutorials">Explore Tutorials</a>
-            </div>
-            <div class="card">
-                <h3>Ebooks</h3>
-                <a href="#ebooks">Explore Ebooks</a>
-            </div>
-            <div class="card">
-                <h3>Frontend Web Development</h3>
-                <a href="#frontend">Learn Frontend Development</a>
-            </div>
-        </div>
-    </section>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="tools/tools.html">Tools</a>
+      <a href="#">Tricks</a>
+      <a href="#">eBooks</a>
+      <a href="about.html">About</a>
+      <a href="#">Contact</a>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Your Website. All Rights Reserved.</p>
-    </footer>
+    <!-- Toggle Button Right Side -->
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>
 
-    <script src="script.js"></script>
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    // Close the menu if the user clicks outside of it
+    document.addEventListener('click', (event) => {
+      if (!menu.contains(event.target) && !toggleBtn.contains(event.target)) {
+        menu.classList.remove('show');
+      }
+    });
+
+    // Close the menu if the user scrolls
+    window.addEventListener('scroll', () => {
+      menu.classList.remove('show');
+    });
+  </script>
+
+  <!-- Search Bar Below the Navigation Bar and Above the Welcome Slogan -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search tutorials, tools, tricks...">
+  </div>
+
+  <script>
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+      const searchValue = this.value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(searchValue)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+  <div class="slogan" id="myslogan">
+    <h1 class="intro">Welcome to HackEr404.</h1>
+    <br>
+    <h1 id="typewriter" class="intro"></h1>
+    <h1 class="disc">
+      Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn the best tips, tricks, and tools used by the pros.
+    </h1>
+    <br>
+  </div>
+
+  <!-- Latest Content Section -->
+  <section id="content">
+    <h2>Latest Content</h2>
+    <div class="content-cards">
+      <div class="card">
+        <h3>Top Security Tools</h3>
+        <p>Explore the best security tools used by professionals in the industry.</p>
+        <a href="tools.html">Explore Tools</a>
+      </div>
+
+      <div class="card">
+        <h3>Hacking Tutorials</h3>
+        <p>Learn step-by-step how to perform common hacking techniques and attacks.</p>
+        <a href="tutorials.html">Explore Tutorials</a>
+      </div>
+
+      <div class="card">
+        <h3>eBooks for Hackers</h3>
+        <p>Download free ebooks on ethical hacking, bug bounty, and more.</p>
+        <a href="ebooks.html">Download eBooks</a>
+      </div>
+
+      <div class="card">
+        <h3>Frontend Web Development</h3>
+        <p>Learn the essentials of frontend web development, including HTML, CSS, and JavaScript.</p>
+        <a href="frontend.html">Learn Frontend Development</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="top-tutorials">
+    <h2>Top Tutorials</h2>
+    <ul class="top-tutorials-list">
+      <li><a href="#">How to Perform SQL Injection</a></li>
+      <li><a href="#">Top 10 Recon Tools for Bug Bounty</a></li>
+      <li><a href="#">Beginner's Guide to XSS (Cross-Site Scripting)</a></li>
+    </ul>
+  </section>
+
+  <section id="instagram">
+    <h2>Follow Me on Instagram</h2>
+    <div class="instagram-feed">
+      <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+    </div>
+  </section>
+
+  <a href="index404.html" class="back-to-home">Home</a>
+
+  <footer>
+    <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Typewriter Effect
+    const text = 'Where Hacking Reveals The Real Internet';
+    let index = 0;
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById('typewriter').innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 100); // typing speed
+      }
+    }
+    typeWriter();
+  </script>
 </body>
 </html>
