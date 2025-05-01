@@ -58,9 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
     <button class="menu-toggle" id="menu-toggle">&#9776;</button>
   </nav>
   
-  <div class="search-bar">
-  <input type="text" id="globalSearch" placeholder="Search tools..." onkeyup="searchFromTools()" />
-  <ul id="searchResults"></ul>
+  <div class="search-section">
+  <h1>Search Hacking Tools</h1>
+  <input type="text" id="globalSearch" placeholder="Search tools..." oninput="searchFromTools()" />
+  <ul id="searchResults" style="margin-top: 10px; list-style: none; padding: 0;"></ul>
   </div>
   
 
