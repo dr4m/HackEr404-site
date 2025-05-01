@@ -192,8 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
   let toolPages = [];
 
-  // Load tool data from JSON
-  fetch('/tools/tools.json')
+  fetch('tools.json')  // No leading slash if on same level
     .then(response => response.json())
     .then(data => {
       toolPages = data;
@@ -202,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function() {
       console.error('Error loading tools.json:', error);
     });
 
-  // Search function
   function searchFromTools() {
     const input = document.getElementById("globalSearch").value.toLowerCase();
     const resultsContainer = document.getElementById("searchResults");
@@ -223,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function() {
       const link = document.createElement("a");
       link.href = tool.url;
       link.textContent = tool.title;
-      link.style.fontWeight = 'bold';
       li.appendChild(link);
       resultsContainer.appendChild(li);
     });
