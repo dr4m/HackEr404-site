@@ -189,43 +189,44 @@ document.addEventListener("DOMContentLoaded", function() {
     <p>© 2025 hackEr404 - All rights reserved.</p>
   </footer>
   
-  <script>
-  let toolPages = [];
-  
-  fetch('/tools/tools.json')
-  .then(response => response.json())
-  .then(data => {
-  toolPages = data;
-  })
-  .catch(error => {
-  console.error('Error loading tools.json:', error);
-  });
-  
-  function searchFromTools() {
-  const input = document.getElementById("globalSearch").value.toLowerCase();
-  const resultsContainer = document.getElementById("searchResults");
-  resultsContainer.innerHTML = '';
-  
-  const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
-  
-  if (filtered.length === 0) {
-  const message = document.createElement("li");
-  message.textContent = "No results found. Please go to the tools folder manually for more tools.";
-  message.style.color = "red";
-  resultsContainer.appendChild(message);
-  return;
-  }
-  
-  filtered.forEach(tool => {
-  const li = document.createElement("li");
-  const link = document.createElement("a");
-  link.href = tool.url;
-  link.textContent = tool.title;
-  li.appendChild(link);
-  resultsContainer.appendChild(li);
-  });
-  }
-  </script>
+<script>
+    let toolPages = [];
+
+    fetch('/tools/tools.json')
+      .then(response => response.json())
+      .then(data => {
+        toolPages = data;
+      })
+      .catch(error => {
+        console.error('Error loading tools.json:', error);
+      });
+
+    function searchFromTools() {
+      const input = document.getElementById("globalSearch").value.toLowerCase();
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = '';
+
+      const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+
+      if (filtered.length === 0) {
+        const message = document.createElement("li");
+        message.textContent = "No results found. Please go to the tools folder manually for more tools.";
+        message.style.color = "red";
+        resultsContainer.appendChild(message);
+        return;
+      }
+
+      filtered.forEach(tool => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = tool.url;
+        link.textContent = tool.title;
+        link.style.fontWeight = "bold";
+        li.appendChild(link);
+        resultsContainer.appendChild(li);
+      });
+    }
+</script>
 
 </body>
 </html>
