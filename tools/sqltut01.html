@@ -212,6 +212,11 @@ return w>=65&&w<=90?v.fromCharCode((w-65+26-12)%26+65):w>=97&&w<=122?v.fromCharC
   <button class="menu-toggle" id="menu-toggle">&#9776;</button>
 </nav>
 
+  <div class="search-bar">
+  <input type="text" id="globalSearch" placeholder="Search tools..." oninput="searchFromTools()" />
+<ul id="searchResults"></ul>
+  </div>
+
 <script>
 const toggleBtn = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
@@ -283,6 +288,51 @@ $stmt->execute([$username, $password]);
 <footer>
   <p>© 2025 hackEr404 - All rights reserved.</p>
 </footer>
+
+  <script>
+  let toolPages = [];
+let toolsLoaded = false;
+
+fetch('tools.json')
+  .then(response => response.json())
+  .then(data => {
+    toolPages = data;
+    toolsLoaded = true;
+  })
+  .catch(error => {
+    console.error('Error loading tools.json:', error);
+  });
+
+function searchFromTools() {
+  if (!toolsLoaded) {
+    alert("Tools are still loading. Please try again in a moment.");
+    return;
+  }
+
+  const input = document.getElementById("globalSearch").value.toLowerCase();
+  const resultsContainer = document.getElementById("searchResults");
+  resultsContainer.innerHTML = '';
+
+  const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+
+  if (filtered.length === 0) {
+    const message = document.createElement("li");
+    message.textContent = "No results found. Please go to the tools folder manually for more tools.";
+    message.style.color = "red";
+    resultsContainer.appendChild(message);
+    return;
+  }
+
+  filtered.forEach(tool => {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = tool.url;
+    link.textContent = tool.title;
+    li.appendChild(link);
+    resultsContainer.appendChild(li);
+  });
+}
+  </script>
 
 </body>
 </html>
