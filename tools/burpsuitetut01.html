@@ -58,11 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
     <button class="menu-toggle" id="menu-toggle">&#9776;</button>
   </nav>
   
-  <div class="search-section">
-  <h1>Search Hacking Tools</h1>
+<div class="search-section">
   <input type="text" id="globalSearch" placeholder="Search tools..." oninput="searchFromTools()" />
-  <ul id="searchResults" style="margin-top: 10px; list-style: none; padding: 0;"></ul>
-  </div>
+  <ul id="searchResults"></ul>
+</div>
   
 
   <div class="slogan">
@@ -191,44 +190,46 @@ document.addEventListener("DOMContentLoaded", function() {
   </footer>
   
 <script>
-    let toolPages = [];
+  let toolPages = [];
 
-    fetch('/tools/tools.json')
-      .then(response => response.json())
-      .then(data => {
-        toolPages = data;
-      })
-      .catch(error => {
-        console.error('Error loading tools.json:', error);
-      });
+  // Load tool data from JSON
+  fetch('/tools/tools.json')
+    .then(response => response.json())
+    .then(data => {
+      toolPages = data;
+    })
+    .catch(error => {
+      console.error('Error loading tools.json:', error);
+    });
 
-    function searchFromTools() {
-      const input = document.getElementById("globalSearch").value.toLowerCase();
-      const resultsContainer = document.getElementById("searchResults");
-      resultsContainer.innerHTML = '';
+  // Search function
+  function searchFromTools() {
+    const input = document.getElementById("globalSearch").value.toLowerCase();
+    const resultsContainer = document.getElementById("searchResults");
+    resultsContainer.innerHTML = '';
 
-      const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+    const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
 
-      if (filtered.length === 0) {
-        const message = document.createElement("li");
-        message.textContent = "No results found. Please go to the tools folder manually for more tools.";
-        message.style.color = "red";
-        resultsContainer.appendChild(message);
-        return;
-      }
-
-      filtered.forEach(tool => {
-        const li = document.createElement("li");
-        const link = document.createElement("a");
-        link.href = tool.url;
-        link.textContent = tool.title;
-        link.style.fontWeight = "bold";
-        li.appendChild(link);
-        resultsContainer.appendChild(li);
-      });
+    if (filtered.length === 0) {
+      const message = document.createElement("li");
+      message.textContent = "No results found. Please go to the tools folder manually for more tools.";
+      message.style.color = "red";
+      resultsContainer.appendChild(message);
+      return;
     }
+
+    filtered.forEach(tool => {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = tool.url;
+      link.textContent = tool.title;
+      link.style.fontWeight = 'bold';
+      li.appendChild(link);
+      resultsContainer.appendChild(li);
+    });
+  }
 </script>
 
 </body>
 </html>
-</html>
+
