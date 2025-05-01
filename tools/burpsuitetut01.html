@@ -177,7 +177,7 @@
 <script>
   let toolPages = [];
 
-  fetch('/tools.json')  // No leading slash if on same level
+  fetch('tools.json')  // No leading slash if on same level
     .then(response => response.json())
     .then(data => {
       toolPages = data;
