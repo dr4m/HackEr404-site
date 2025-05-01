@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-LH20MJN01Q');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Burp Suite - HackEr404</title>
+  <link rel="stylesheet" href="mystyles.css">
+  <!-- Meta Tags for SEO -->
+  <meta name="title" content="Burp Suite Tutorial - Web Security Testing Tool Guide | HackEr404">
+  <meta name="description" content="Learn how to use Burp Suite for ethical hacking, web vulnerability scanning, and penetration testing. Step-by-step tutorial with real-world examples.">
+  <meta name="keywords" content="Burp Suite tutorial, Burp Suite for beginners, web security testing, ethical hacking, penetration testing, web vulnerability scanner, bug bounty tools, OWASP testing, HackEr404 tools, hacking tools">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HackEr404">
+  <meta property="og:title" content="Burp Suite Tutorial - Web Security Testing Tool Guide">
+  <meta property="og:description" content="Step-by-step Burp Suite tutorial for ethical hackers and bug bounty hunters.">
+  <meta property="og:type" content="website">
+  
+</head>
+<body>
+
+  <div id="progressbar"></div>
+  <script>
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressbar").style.width = scrolled + "%";
+    };
+  </script>
+
+  <nav>
+    <div class="logo">
+      <img src="404logo.jpg" alt="HACKER 404 Logo">
+    </div>
+    <div class="menu" id="menu">
+      <a href="../index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="tricks.html">Frontend</a>
+      <a href="myebooks.html">Networking</a>
+      <a href="../about.html">About</a>
+      <a href="mycontact.html">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>
+  
+  <div class="search-bar">
+  <input type="text" id="globalSearch" placeholder="Search tools..." onkeyup="searchFromTools()" />
+  <ul id="searchResults"></ul>
+  </div>
+  
+
+  <div class="slogan">
+    <h1>Burp Suite Tutorial</h1>
+    <h2>powerful toolkit for testing web application security. Learn how to intercept requests, find vulnerabilities, and secure your sites.</h2>
+  </div>
+
+  <section class="tutorial-container">
+    <h2>What is Burp Suite?</h2>
+    <img src="Burpsuite1.jpg" alt="Tutorial Preview">
+    <p>Burp Suite is a Java-based platform used for performing security testing of web applications. It helps ethical hackers intercept traffic between the browser and the target app, manipulate requests, and detect vulnerabilities.</p>
+    
+    <br>
+    <br>
+    
+    <h2>Installing Burp Suite</h2>
+    
+    <ul>
+      <li>Download from: <a href="https://portswigger.net/burp" target="_blank">portswigger.net/burp</a></li>
+      <li>Available for Windows, Linux, and macOS</li>
+      <li>Install Java if not already installed</li>
+    </ul>
+    
+    <br>
+
+    <h2>Configuring Your Browser</h2>
+    <ol>
+      <li>Go to Firefox → Settings → Network Settings → Manual Proxy.</li>
+      <li>Set HTTP Proxy: 127.0.0.1 and Port: 8080</li>
+      <li>Download Burp’s CA certificate from http://burp</li>
+      <li>Import the certificate into your browser’s certificate manager</li>
+    </ol>
+    <br>
+
+    <h2>Core Tools in Burp Suite</h2>
+    <ul>
+      <li><strong>Proxy:</strong> Intercepts HTTP/S traffic between browser and server</li>
+      <li><strong>Target:</strong> Shows structure and contents of the website</li>
+      <li><strong>Intruder:</strong> Performs automated fuzzing or brute force attacks</li>
+      <li><strong>Repeater:</strong> Allows manual testing and request modification</li>
+      <li><strong>Scanner (Pro):</strong> Automatically scans for vulnerabilities</li>
+    </ul>
+    <br>
+
+    <h2>Common Use Cases</h2>
+    <ul>
+      <li>Intercept and modify login requests</li>
+      <li>Find hidden parameters or admin panels</li>
+      <li>Test for SQL Injection, XSS, and other web vulnerabilities</li>
+      <li>Check HTTP headers and cookies</li>
+    </ul>
+    <br>
+
+    <h2>Example: Testing Login with Repeater</h2>
+    <ol>
+      <li>Intercept login request via Proxy</li>
+      <li>Send to Repeater</li>
+      <li>Modify parameters (like `username=admin`) and click "Send"</li>
+      <li>Analyze the response to detect issues</li>
+    </ol>
+    <br>
+
+    <h2>Best Practices</h2>
+    <ul>
+      <li>Always test in a legal environment or with permission</li>
+      <li>Use Repeater and Intruder for in-depth testing</li>
+      <li>Check for tokens, sessions, and hidden inputs</li>
+      <li>Learn to read HTTP headers and status codes</li>
+    </ul>
+
+    <p>Burp Suite is an essential tool for any ethical hacker or bug bounty hunter. Practice regularly to master it.</p>
+  </section>
+  
+  <!-- Add this inside your <body> just after your Final Tip Section -->
+  
+  <section id="next-tutorial">
+  <h2>Next Tutorial</h2>
+  <div class="next-tutorial-card">
+  <img src="burpsuite2.jpg" alt="Next Tutorial Preview">
+  <div class="next-tutorial-content">
+  <h3>Intercept HTTP Requests - Burp Suite</h3>
+  <p>Learn how to capture and manipulate HTTP requests using Burp Suite’s Intercept tool.</p>
+  <a href="sqltut01.html">Read Next →</a>
+  </div>
+  </div>
+  </section>
+  
+  <section id="top-tutorials">
+  <h2>Top Tutorials</h2>
+  <ul class="top-tutorials-list">
+  <li><a href="#">Beginner's Guide to Bug Bounty</a></li>
+  <li><a href="#">Top 5 Tools for Web Pentesting</a></li>
+  <li><a href="#">How to Find Subdomains for Recon</a></li>
+  </ul>
+  </section>
+  
+
+  <section id="instagram">
+    <h2>Follow Me on Instagram</h2>
+    <div class="instagram-feed">
+      <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+    </div>
+  </section>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+  
+  <script>
+  const toolPages = [
+  { title: "SQLmap", url: "/tools/sqltut01.html" },
+  { title: "Burp Suite", url: "/tools/burpsuite.html" },
+  { title: "Nmap", url: "/tools/nmap.html" },
+  { title: "Metasploit", url: "/tools/metasploit.html" },
+  { title: "Wireshark", url: "/tools/wireshark.html" }
+  // Add more tools here
+  ];
+  </script>
+
+  <footer>
+    <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>
+  
+  <script>
+  let toolPages = [];
+  
+  fetch('/tools/tools.json')
+  .then(response => response.json())
+  .then(data => {
+  toolPages = data;
+  })
+  .catch(error => {
+  console.error('Error loading tools.json:', error);
+  });
+  
+  function searchFromTools() {
+  const input = document.getElementById("globalSearch").value.toLowerCase();
+  const resultsContainer = document.getElementById("searchResults");
+  resultsContainer.innerHTML = '';
+  
+  const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+  
+  if (filtered.length === 0) {
+  const message = document.createElement("li");
+  message.textContent = "No results found. Please go to the tools folder manually for more tools.";
+  message.style.color = "red";
+  resultsContainer.appendChild(message);
+  return;
+  }
+  
+  filtered.forEach(tool => {
+  const li = document.createElement("li");
+  const link = document.createElement("a");
+  link.href = tool.url;
+  link.textContent = tool.title;
+  li.appendChild(link);
+  resultsContainer.appendChild(li);
+  });
+  }
+  </script>
+
+</body>
+</html></html>ody>
+</html>
