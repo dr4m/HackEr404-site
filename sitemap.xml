@@ -21,6 +21,26 @@
       <loc>https://hacker404.site/about.html</loc>
    </url>
   
+  <url>
+    <loc>https://hacker404.site/bugbountytut1.html</loc>
+  </url>
+
+  <url>
+    <loc>https://hacker404.site/networking/networking1.html</loc>
+  </url>
+
+  <url>
+    <loc>https://hacker404.site/tools/burpsuitetut01.html </loc>
+  </url>
+
+  <url>
+    <loc>https://hacker404.site/tools/burpsuitetut2.html</loc>
+  </url>
+
+    <url>
+    
+  </url>
+
   
   <!-- Add more pages like this -->
 </urlset>
