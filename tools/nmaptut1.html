@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LH20MJN01Q');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nmap Tutorial - HackEr404</title>
+  <link rel="stylesheet" href="mystyles.css">
+  <!-- Meta Tags for SEO -->
+  <meta name="title" content="Nmap Tutorial - Network Scanning Guide for Ethical Hackers | HackEr404">
+  <meta name="description" content="Learn how to use Nmap for network scanning, host discovery, and vulnerability assessment. Step-by-step tutorial for ethical hackers and bug bounty beginners.">
+  <meta name="keywords" content="Nmap tutorial, network scanning, ethical hacking, port scanning, bug bounty, hacking tools, nmap commands, nmap examples, HackEr404">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HackEr404">
+  <meta property="og:title" content="Nmap Tutorial - Network Scanning Guide for Ethical Hackers">
+  <meta property="og:description" content="Step-by-step Nmap tutorial with real-world use cases for ethical hackers.">
+  <meta property="og:type" content="website">
+
+</head>
+<body>
+
+  <div id="progressbar"></div>
+  <script>
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressbar").style.width = scrolled + "%";
+    };
+  </script>
+
+  <nav>
+    <div class="logo">
+      <img src="404logo.jpg" alt="HACKER 404 Logo">
+    </div>
+    <div class="menu" id="menu">
+      <a href="../index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="tricks.html">Frontend</a>
+      <a href="myebooks.html">Networking</a>
+      <a href="../about.html">About</a>
+      <a href="mycontact.html">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>
+  
+  
+<!-- search bqr for tools -->
+  <div class="search-bar">
+    <input type="text" id="globalSearch" placeholder="Search tools..." onkeyup="searchFromTools()" />
+    <ul id="searchResults"></ul>
+  </div>
+
+
+  <div class="slogan">
+    <h1>Nmap Tutorial</h1>
+    <h2>Explore and analyze networks with Nmap. Learn scanning techniques and practical use cases for ethical hacking.</h2>
+  </div>
+
+  <section class="tutorial-container">
+    <h2>What is Nmap?</h2>
+    <img src="nmappreview.jpg" alt="Nmap Preview">
+    <p>Nmap (Network Mapper) is an open-source tool for network discovery and security auditing. It's widely used in ethical hacking for scanning networks, detecting hosts, open ports, running services, and identifying vulnerabilities.</p>
+
+    <br><h2>Installing Nmap</h2>
+    <ul>
+      <li>Linux: <code>sudo apt install nmap</code></li>
+      <li>Windows: Download from <a href="https://nmap.org/download.html" target="_blank">nmap.org</a></li>
+      <li>Termux (Android): <code>pkg install nmap</code></li>
+    </ul>
+
+    <br><h2>Basic Nmap Scan Examples</h2>
+    <ul>
+      <li><code>nmap 192.168.1.1</code> — Scan a single IP</li>
+      <li><code>nmap 192.168.1.0/24</code> — Scan a full subnet</li>
+      <li><code>nmap -sS target.com</code> — Stealth SYN scan</li>
+      <li><code>nmap -p 1-1000 192.168.1.5</code> — Scan specific port range</li>
+      <li><code>nmap -A target.com</code> — Aggressive scan (OS, version, script)</li>
+    </ul>
+
+    <br><h2>Top Features of Nmap</h2>
+    <ul>
+      <li>Port Scanning</li>
+      <li>Service and Version Detection</li>
+      <li>OS Fingerprinting</li>
+      <li>Scriptable Interaction using NSE (Nmap Scripting Engine)</li>
+      <li>Detecting Firewalls and IDS</li>
+    </ul>
+
+    <br><h2>Real-World Example</h2>
+    <p>Let’s say you're testing a website <code>example.com</code>. Use:</p>
+    <code>nmap -sV example.com</code>
+    <p>This will return open ports and the services running (e.g., Apache, SSH).</p>
+
+    <br><h2>Best Practices</h2>
+    <ul>
+      <li>Always have legal permission before scanning</li>
+      <li>Use slow timing options (<code>-T2</code>) for stealth</li>
+      <li>Scan during non-peak hours to avoid alerting</li>
+      <li>Combine with other tools like Nikto, Burp, etc.</li>
+    </ul>
+
+    <p>Nmap is a must-learn tool for all ethical hackers. Practice scanning in lab environments to master it.</p>
+  </section>
+
+ <!-- ad trigering in next page buton -->
+ 
+ <section id="next-tutorial">
+ <h2>Next Tutorial</h2>
+ <div class="next-tutorial-card">
+ <img src="metasploit.jpg" alt="Next Tutorial Preview">
+ <div class="next-tutorial-content">
+ <h3>Nmap Part 2</h3>
+ <p>Advanced Scanning Techniques, Learn stealth scanning, OS detection, and more.</p>
+ <button class="next-tut-but" onclick="redirectWithAd()">Read Next →</button>
+ </div>
+ </div>
+ </section>
+ 
+ <script>
+ function redirectWithAd() {
+ // Open ad link in new tab
+ window.open('https://sawutser.top/4/9290786', '_blank');
+ 
+ // Redirect to next tutorial after delay
+ setTimeout(function() {
+ window.location.href = 'nmaptut2.html';
+ }, 3000); // Delay in milliseconds (3 seconds)
+ }
+ </script>
+ 
+<!-- Floating Button -->
+<div class="slide-toggle-btn" onclick="toggleSlidebar()">≡</div>
+
+<!-- Slide-in Sidebar -->
+<div id="rightSidebar" class="right-slidebar">
+  <a href="nmap.html">Nmap</a>
+  <a href="sqlmap.html">SQLmap</a>
+  <a href="burpsuite.html">Burp</a>
+  <a href="nikto.html">Nikto</a>
+  <a href="metasploit.html">Metasploit</a>
+  <a href="tools.html">All Tools</a>
+</div>
+ 
+ <script>
+ function toggleSlidebar() {
+ const sidebar = document.getElementById("rightSidebar");
+ sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
+ }
+ </script>
+ 
+
+  <section id="top-tutorials">
+    <h2>Top Tutorials</h2>
+    <ul class="top-tutorials-list">
+      <li><a href="#">Top Recon Tools for Bug Bounties</a></li>
+      <li><a href="#">How to Use SQLmap Efficiently</a></li>
+      <li><a href="#">Bypass Login with Burp Suite</a></li>
+    </ul>
+  </section>
+
+  <section id="instagram">
+    <h2>Follow Me on Instagram</h2>
+    <div class="instagram-feed">
+      <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+    </div>
+  </section>
+  
+  
+
+  <footer>
+    <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    let toolPages = [];
+    fetch('/tools/tools.json')
+    .then(response => response.json())
+    .then(data => {
+      toolPages = data;
+    });
+
+    function searchFromTools() {
+      const input = document.getElementById("globalSearch").value.toLowerCase();
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = '';
+    
+      const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+    
+      if (filtered.length === 0) {
+        const message = document.createElement("li");
+        message.textContent = "No results found. Please go to the tools folder manually for more tools.";
+        message.style.color = "red";
+        resultsContainer.appendChild(message);
+        return;
+      }
+    
+      filtered.forEach(tool => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = tool.url;
+        link.textContent = tool.title;
+        li.appendChild(link);
+        resultsContainer.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>ML = '';
+    
+      const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+    
+      if (filtered.length === 0) {
+        const message = document.createElement("li");
+        message.textContent = "No results found. Please go to the tools folder manually for more tools.";
+        message.style.color = "red";
+        resultsContainer.appendChild(message);
+        return;
+      }
+    
+      filtered.forEach(tool => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = tool.url;
+        link.textContent = tool.title;
+        li.appendChild(link);
+        resultsContainer.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>
