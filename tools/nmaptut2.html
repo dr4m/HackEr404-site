@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LH20MJN01Q');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nmap Tutorial Part 2 - HackEr404</title>
+  <link rel="stylesheet" href="mystyles.css">
+  <!-- Meta Tags for SEO -->
+  <meta name="title" content="Nmap Tutorial Part 2 - Advanced Scanning Techniques | HackEr404">
+  <meta name="description" content="Advanced Nmap scanning techniques explained for ethical hackers. Learn stealth scanning, OS detection, and more.">
+  <meta name="keywords" content="Advanced Nmap, Ethical Hacking, Network Scanning, OS Detection, Nmap Commands, HackEr404">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HackEr404">
+  <meta property="og:title" content="Nmap Tutorial Part 2 - Advanced Scanning Techniques">
+  <meta property="og:description" content="Step-by-step tutorial on advanced Nmap scanning methods for ethical hackers.">
+  <meta property="og:type" content="website">
+
+</head>
+<body>
+
+  <div id="progressbar"></div>
+  <script>
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressbar").style.width = scrolled + "%";
+    };
+  </script>
+
+ <nav>
+ <div class="logo">
+ <img src="404logo.jpg" alt="HACKER 404 Logo">
+ </div>
+ <div class="menu" id="menu">
+ <a href="../index.html">Home</a>
+ <a href="tools.html">Tools</a>
+ <a href="tricks.html">Frontend</a>
+ <a href="myebooks.html">Networking</a>
+ <a href="../about.html">About</a>
+ <a href="mycontact.html">Contact</a>
+ </div>
+ <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+ </nav>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="globalSearch" placeholder="Search tools..." onkeyup="searchFromTools()" />
+    <ul id="searchResults"></ul>
+  </div>
+
+  <div class="slogan">
+    <h1>Nmap Tutorial Part 2 - Advanced Scanning</h1>
+    <h2>Learn advanced scanning techniques with Nmap, including OS detection, stealth scans, and more.</h2>
+  </div>
+
+  <!-- Tutorial Content -->
+  <section class="tutorial-container">
+    <h2>1. OS Detection</h2>
+    <pre><code>nmap -O target_ip</code></pre>
+    <p>Detect the operating system of the target device.</p>
+
+    <h2>2. Aggressive Scan</h2>
+    <pre><code>nmap -A target_ip</code></pre>
+    <p>Perform OS detection, version detection, script scanning, and traceroute in a single command.</p>
+
+    <h2>3. Stealth SYN Scan</h2>
+    <pre><code>nmap -sS target_ip</code></pre>
+    <p>Scan with SYN packets to avoid detection by firewalls.</p>
+
+    <h2>4. Evasion with Decoys</h2>
+    <pre><code>nmap -D RND:10 target_ip</code></pre>
+    <p>Use decoy packets to mask your real IP and confuse IDS/IPS systems.</p>
+
+    <h2>5. Scan Specific Ports</h2>
+    <pre><code>nmap -p 22,80,443 target_ip</code></pre>
+    <p>Scan specific ports on a target device for a more focused analysis.</p>
+
+    <h2>6. Timing Templates</h2>
+    <pre><code>nmap -T4 target_ip</code></pre>
+    <p>Speed up the scan with faster timing templates (T0 - T5).</p>
+  </section>
+
+  <!-- Next Tutorial Section with Ad Trigger -->
+  <section id="next-tutorial">
+    <h2>Next Tutorial</h2>
+    <div class="next-tutorial-card">
+      <img src="metasploit.jpg" alt="Next Tutorial Preview">
+      <div class="next-tutorial-content">
+        <h3>Metasploit for Beginners</h3>
+        <p>Learn how to use Metasploit for exploitation and vulnerability testing.</p>
+        <button class="next-tut-but" onclick="redirectWithAd()">Read Next →</button>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+  function redirectWithAd() {
+  // Open ad link in new tab
+  window.open('https://sawutser.top/4/9290786', '_blank');
+  
+  // Redirect to next tutorial after delay
+  setTimeout(function() {
+  window.location.href = 'nmaptut3.html';
+  }, 3000); // Delay in milliseconds (3 seconds)
+  }
+  </script>
+  
+  
+
+  <footer>
+    <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>
+  
+  <script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('show');
+  });
+  
+  let toolPages = [];
+  fetch('/tools/tools.json')
+  .then(response => response.json())
+  .then(data => {
+  toolPages = data;
+  });
+  
+  function searchFromTools() {
+  const input = document.getElementById("globalSearch").value.toLowerCase();
+  const resultsContainer = document.getElementById("searchResults");
+  resultsContainer.innerHTML = '';
+  
+  const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+  
+  if (filtered.length === 0) {
+  const message = document.createElement("li");
+  message.textContent = "No results found. Please go to the tools folder manually for more tools.";
+  message.style.color = "red";
+  resultsContainer.appendChild(message);
+  return;
+  }
+  
+  filtered.forEach(tool => {
+  const li = document.createElement("li");
+  const link = document.createElement("a");
+  link.href = tool.url;
+  link.textContent = tool.title;
+  li.appendChild(link);
+  resultsContainer.appendChild(li);
+  });
+  }
+  </script>
+
+</body>
+</html>
