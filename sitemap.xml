@@ -9,9 +9,6 @@
   <url>
     <loc>https://hacker404.site/sqltut01.html</loc>
   </url>
-  <url>
-     <loc>https://hacker404.site/bugbountytut1.html</loc>
-   </url>
    
    <url>
       <loc>https://hacker404.site/tools/tools.html</loc>
@@ -40,6 +37,10 @@
     <url>
       <loc>https://hacker404.site/tools/nmaptut1.html</loc>
   </url>
+  
+    <url>
+      <loc>https://hacker404.site/tools/metatut2.html</loc>
+  </url>
 
   <url>
       <loc>https://hacker404.site/tools/nmaptut2.html</loc>
@@ -49,9 +50,6 @@
       <loc>https://hacker404.site/tools/metatut1.html</loc>
   </url>
 
-    <url>
-      <loc>https://hacker404.site/tools/metatut2.html</loc>
-  </url>
 
   
 
