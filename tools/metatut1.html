@@ -86,14 +86,27 @@ use exploit/unix/ftp/vsftpd_234_backdoor set RHOST 192.168.1.105 run </pre>
         <button class="next-tut-but" onclick="redirectWithAd()">Read Next →</button>
       </div>
     </div>
-  </section>  <script>
-    function redirectWithAd() {
-      window.open('https://sawutser.top/4/9290786', '_blank');
-      setTimeout(function() {
-        window.location.href = '/tools/metatut2.html';
-      }, 3000);
+  </section>
+  
+  <script>
+  function redirectWithAd() {
+    // Open ad in background tab (some browsers might block this)
+    let adWindow = window.open('https://sawutser.top/4/9290786', '_blank');
+
+    // Ensure adWindow exists (i.e., not blocked by browser)
+    if (adWindow) {
+      adWindow.blur();
+      window.focus();
     }
-  </script>  <section id="instagram">
+
+    // Redirect to the next tutorial after 2 seconds
+    setTimeout(function() {
+      window.location.href = '/tools/metatut2.html';
+    }, 2000);
+  }
+  </script>
+  
+  <section id="instagram">
     <h2>Follow Me on Instagram</h2>
     <div class="instagram-feed">
       <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
