@@ -1,9 +1,0 @@
-# Allow Googlebot and analytics tools
-RewriteEngine On
-RewriteCond %{HTTP_USER_AGENT} ^Googlebot [OR]
-RewriteCond %{HTTP_USER_AGENT} ^Mozilla/5.0
-RewriteRule ^ - [L]
-
-# Force HTTPS (optional)
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
