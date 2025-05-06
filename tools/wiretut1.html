@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LH20MJN01Q');
+</script>
+  <meta name="google-site-verification" content="YUXTVfjPTrV9tWdMxK9EmrmIdy64Tiwfc5PemBGkcYs"/>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wireshark Tutorial Part 1 - Introduction & Packet Capturing | HackEr404</title>
+  <link rel="stylesheet" href="../mystyles.css">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="title" content="Wireshark Tutorial Part 1 - Learn Packet Capturing | HackEr404">
+  <meta name="description" content="Step-by-step guide to using Wireshark for network traffic capturing. Learn basics of packet analysis with practical examples.">
+  <meta name="keywords" content="Wireshark, Packet Capture, Ethical Hacking, Network Monitoring, TCP Dump, HackEr404">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HackEr404">
+  
+  <!-- Preconnect to speed up external resource loading (for faster performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+
+
+<body>
+
+  <div id="progressbar"></div>
+  <script>
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressbar").style.width = scrolled + "%";
+    };
+  </script>
+
+  <nav>
+    <div class="logo">
+      <img src="../404logo.jpg" alt="HackEr404 Logo">
+    </div>
+    <div class="menu" id="menu">
+      <a href="../index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="/frontend/frontend1.html">Frontend</a>
+      <a href="/networking/networking1.html">Networking</a>
+      <a href="../about.html">About</a>
+      <a href="mycontact.html">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>
+
+  <div class="slogan">
+    <h1>Wireshark Tutorial Part 1 - Getting Started with Packet Capturing</h1>
+    <h2>Learn how to monitor and analyze network traffic with Wireshark step-by-step.</h2>
+  </div>
+
+  <section class="tutorial-container">
+    <h2>1. What is Wireshark?</h2>
+    <img src="wireshark1.jpg" alt="Tutorial Preview">
+    <p>Wireshark is one of the most powerful and widely-used network protocol analyzers. It lets you see what's happening on your network at a microscopic level and is an essential tool for ethical hackers, cybersecurity professionals, and network engineers.</p>
+
+
+
+    <br><br>
+    
+    <h2>2. Installation</h2>
+    <p>Wireshark is available for Windows, macOS, and Linux. You can download it from the official website: <a href="https://www.wireshark.org/download.html" target="_blank">www.wireshark.org</a></p>
+
+    
+    <br><br>
+    
+    <h2>3. Capturing Packets</h2>
+    <p>Once installed, open Wireshark and select your active network interface (like Ethernet or Wi-Fi) to begin capturing live traffic.</p>
+    <p>Click the blue shark fin icon or press <strong>Ctrl+E</strong> to start capturing.</p>
+
+
+
+    <br><br>
+    
+    
+    <h2>4. Basic Filters</h2>
+    <p>Wireshark provides powerful filtering options. Here are some useful display filters:</p>
+    <pre><code>ip.addr == 192.168.1.1</code></pre>
+    <p>Displays all packets to or from the IP address 192.168.1.1.</p>
+
+    <pre><code>http</code></pre>
+    <p>Filters only HTTP traffic.</p>
+
+    <pre><code>tcp.port == 80</code></pre>
+    <p>Filters all traffic on port 80 (HTTP).</p>
+
+
+<br>
+<br>
+    <h2>5. Understanding Packet Details</h2>
+    <p>Each captured packet in Wireshark contains three main sections:</p>
+    <ul>
+      <li><strong>Packet List Pane</strong> – shows summary of packets.</li>
+      <li><strong>Packet Details Pane</strong> – expands the selected packet’s protocols and headers.</li>
+      <li><strong>Packet Bytes Pane</strong> – shows raw data in hexadecimal.</li>
+    </ul>
+    
+    <br><br>
+
+    <h2>6. Saving and Exporting</h2>
+    <p>Click on <strong>File > Save As</strong> to save captured data for future analysis. Wireshark uses the `.pcapng` or `.pcap` format.</p>
+
+    
+    <br><br>
+    
+    <h2>7. Bonus: Capture from Terminal using tcpdump</h2>
+    <p>On Linux, you can use `tcpdump` to capture packets directly from the terminal:</p>
+    <pre><code>sudo tcpdump -i eth0 -w capture.pcap</code></pre>
+    <p>This command captures traffic on the eth0 interface and saves it in a file called <strong>capture.pcap</strong> that you can open in Wireshark later.</p>
+  </section>
+  <br>
+
+  <section id="next-tutorial">
+    <h2>Next Tutorial</h2>
+    <div class="next-tutorial-card">
+      <img src="wireshark-part2.jpg" alt="Next Tutorial Preview">
+      <div class="next-tutorial-content">
+        <h3>Wireshark Filters and Analysis</h3>
+        <p>Learn advanced Wireshark filters, protocols analysis, and tips to uncover suspicious network activity.</p>
+        <button class="next-tut-but" onclick="redirectWithAd()">Read Next →</button>
+      </div>
+    </div>
+  </section>
+  
+  <section id="top-tutorials">
+  <h2>Top Tutorials</h2>
+  <ul class="top-tutorials-list">
+  <li><a href="bugbounty1.html">Beginner's Guide to Bug Bounty</a></li>
+  <br>
+  <li><a href="tools.html">Top 5 Tools for Web Pentesting</a></li>
+  <br>
+  <li><a href="#">How to Find Subdomains for Recon</a></li>
+  </ul>
+  </section>
+  
+  <section id="instagram">
+  <h2>Follow Me on Instagram</h2>
+  <div class="instagram-feed">
+  <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+  </div>
+  </section>
+  
+  
+
+  <script>
+    function redirectWithAd() {
+      window.open('https://sawutser.top/4/9290786', '_blank');
+      setTimeout(function() {
+        window.location.href = 'wiretut2.html';
+      }, 3000);
+    }
+
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+
+  <footer>
+    <p>© 2025 HackEr404 - All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
