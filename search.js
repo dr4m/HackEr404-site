@@ -1,7 +1,7 @@
 const tutorials = [
   { title: "Nmap Tool", url: "nmap.html" },
   { title: "SQLMap Usage", url: "sqlmap.html" },
-  { title: "Facebook Hacking", url: "facebookhack1.html" },
+  { title: "Facebook Hacking", url: "fbhack1.html" },
   { title: "Burp Suite Basics", url: "burpsuitetut01.html" },
   // Add more...
 ];
