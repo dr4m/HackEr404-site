@@ -92,10 +92,37 @@
     });
   </script>
 
-  <div class="search-container">
-  <input type="text" id="searchInput" placeholder="Search tutorials..." onkeyup="searchFunction()" />
+
+  <!-- Search Bar UI -->
+<input type="text" id="searchInput" placeholder="Search tutorials..." onkeyup="searchFunction()" />
 <ul id="searchResults" style="display: none; list-style-type: none; padding: 0;"></ul>
-  </div>
+
+<!-- Style for Search Bar -->
+<style>
+  #searchInput {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  #searchResults {
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    z-index: 1000;
+  }
+  #searchResults li {
+    padding: 8px;
+  }
+  #searchResults li a {
+    text-decoration: none;
+    color: #333;
+  }
+  #searchResults li:hover {
+    background-color: #f0f0f0;
+  }
+</style>
 
   
   <!-- Slogan Section -->
