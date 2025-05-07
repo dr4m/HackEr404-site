@@ -225,93 +225,8 @@ Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials
     </section>
     
     
-   <script>
-   // Selecting search input and all cards
-   const searchInput = document.querySelector('.search-bar input');
-   const cards = document.querySelectorAll('.card');
    
-   // Create "No results" message dynamically
-   const noResultsMessage = document.createElement('div');
-   noResultsMessage.innerText = "No tutorials found.";
-   noResultsMessage.style.textAlign = "center";
-   noResultsMessage.style.marginTop = "20px";
-   noResultsMessage.style.color = "#ff6666";
-   noResultsMessage.style.display = "none"; // hidden by default
-   
-   // Insert after content cards
-   const contentSection = document.querySelector('.content-cards');
-   contentSection.parentNode.insertBefore(noResultsMessage, contentSection.nextSibling);
-   
-   // Create Reset Button
-   const resetButton = document.createElement('button');
-   resetButton.innerText = "Clear Search";
-   resetButton.style.marginTop = "10px";
-   resetButton.style.padding = "8px 15px";
-   resetButton.style.borderRadius = "20px";
-   resetButton.style.border = "none";
-   resetButton.style.backgroundColor = "#ff6600";
-   resetButton.style.color = "#fff";
-   resetButton.style.cursor = "pointer";
-   resetButton.style.display = "none"; // hidden by default
-   resetButton.style.transition = "0.3s";
-   resetButton.addEventListener('mouseover', function() {
-   this.style.backgroundColor = "#e65c00";
-   });
-   resetButton.addEventListener('mouseout', function() {
-   this.style.backgroundColor = "#ff6600";
-   });
-   document.querySelector('.search-bar').appendChild(resetButton);
-   
-   searchInput.addEventListener('input', function() {
-   const query = this.value.toLowerCase();
-   let visibleCount = 0;
-   
-   cards.forEach(card => {
-   const title = card.querySelector('h3').innerText.toLowerCase();
-   const description = card.querySelector('p').innerText.toLowerCase();
-   
-   // Now search both title and description
-   if (title.includes(query) || description.includes(query)) {
-   card.style.display = 'block';
-   card.style.opacity = '1';
-   card.style.transform = 'scale(1)';
-   visibleCount++;
-   } else {
-   card.style.opacity = '0';
-   card.style.transform = 'scale(0.8)';
-   setTimeout(() => {
-   card.style.display = 'none';
-   }, 200); // smooth animation before hiding
-   }
-   });
-   
-   // Show "No Results" if nothing matches
-   if (visibleCount === 0) {
-   noResultsMessage.style.display = "block";
-   } else {
-   noResultsMessage.style.display = "none";
-   }
-   
-   // Show Reset button if any typing
-   if (query.length > 0) {
-   resetButton.style.display = "inline-block";
-   } else {
-   resetButton.style.display = "none";
-   }
-   });
-   
-   // Reset functionality
-   resetButton.addEventListener('click', function() {
-   searchInput.value = '';
-   cards.forEach(card => {
-   card.style.display = 'block';
-   card.style.opacity = '1';
-   card.style.transform = 'scale(1)';
-   });
-   noResultsMessage.style.display = "none";
-   resetButton.style.display = "none";
-   });
-   </script>
+
    
    <script>
    // Typewriter Effect
@@ -334,6 +249,41 @@ Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials
     <footer>
         <p>© 2025 hackEr404 - All rights reserved.</p>
     </footer>
+
+  <script>
+let searchData = [];
+
+// Load JSON data from tools/data.json
+fetch('/tools/data.json')
+  .then(response => response.json())
+  .then(data => searchData = data)
+  .catch(error => console.error('Error loading JSON:', error));
+
+// Search function
+function globalSearch() {
+  const input = document.getElementById("globalSearchInput").value.toLowerCase();
+  const resultsContainer = document.getElementById("searchResults");
+  resultsContainer.innerHTML = "";
+  
+  if (input.length < 2) {
+    resultsContainer.style.display = "none";
+    return;
+  }
+
+  const filtered = searchData.filter(item => 
+    item.title.toLowerCase().includes(input) || 
+    item.description.toLowerCase().includes(input)
+  );
+
+  filtered.forEach(item => {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
+    resultsContainer.appendChild(li);
+  });
+
+  resultsContainer.style.display = filtered.length ? "block" : "none";
+}
+  </script>
 
 
 </body>
