@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LH20MJN01Q');
+  </script>
+  
+  <!-- Basic Meta Tags -->
+  <title>Frontend Web Development - Learn HTML, CSS, JavaScript | HackEr404</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Master frontend web development with HTML, CSS, and JavaScript tutorials. Learn responsive design, UI/UX tips, and frontend tools at HackEr404.">
+  <meta name="keywords" content="Frontend development, HTML, CSS, JavaScript, UI design, Web development tutorials, HackEr404">
+  <meta name="author" content="HackEr404 Team">
+  
+  <!-- Open Graph for Social Media -->
+  <meta property="og:title" content="Frontend Web Development - HackEr404">
+  <meta property="og:description" content="Explore HTML, CSS, JS tutorials and frontend tools for beginners to advanced developers.">
+  <meta property="og:image" content="https://hackEr404.site/assets/preview.jpg">
+  <meta property="og:url" content="https://hackEr404.site/frontend/frontend.html">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="mystyles.css">
+</head>
+
+
+<body>
+
+  <div id="progressbar"></div>
+  <script>
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressbar").style.width = scrolled + "%";
+    };
+  </script>
+
+  <nav>
+    <div class="logo">
+      <img src="404logo.jpg" alt="HACKER 404 Logo">
+    </div>
+    <div class="menu" id="menu">
+      <a href="../index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="frontend.html" class="active">Frontend</a>
+      <a href="/networking/networking1.html">Networking</a>
+      <a href="../about.html">About</a>
+      <a href="mycontact.html">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>
+
+  <div class="search-bar">
+  <input type="text" id="globalSearch" placeholder="Search HackEr404..." onkeyup="searchSite()" />
+  <div id="searchResults" class="search-results"></div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('show');
+    }
+
+    function searchFrontend() {
+      const input = document.getElementById("frontendSearch").value.toLowerCase();
+      const cards = document.querySelectorAll(".tool-card");
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = title.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+
+  <div class="slogan">
+    <h1>Frontend Development Tutorials</h1>
+    <p>Learn HTML, CSS, JavaScript, and more to build beautiful websites and applications.</p>
+  </div>
+
+  <!-- Frontend Tutorials Section -->
+  <section id="tools">
+    <div class="tool-card">
+      <h3>HTML Basics</h3>
+      <p>Introduction to HTML tags, structure, forms, media, and semantic elements.</p>
+      <a href="/frontend/htmlintro.html">Learn More</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>CSS Styling</h3>
+      <p>Learn how to style your webpages using colors, layouts, transitions, and animations.</p>
+      <a href="/frontend/cssintro.html">Learn More</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>JavaScript Essentials</h3>
+      <p>Understand JavaScript fundamentals like variables, functions, DOM, and events.</p>
+      <a href="/frontend/jsintro.html">Learn More</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>Responsive Design</h3>
+      <p>Make your websites mobile-friendly with Flexbox, Grid, and media queries.</p>
+      <a href="/frontend/responsive.html">Learn More</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>Bootstrap Framework</h3>
+      <p>Use Bootstrap to create fast, responsive, and beautiful layouts easily.</p>
+      <a href="/frontend/bootstrap.html">Learn More</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>React Basics</h3>
+      <p>Get started with building UI components using ReactJS library.</p>
+      <a href="/frontend/reactintro.html">Learn More</a>
+    </div>
+  </section>
+
+  <br>
+
+  <section id="top-tutorials">
+    <h2>Top Tutorials</h2>
+    <ul class="top-tutorials-list">
+      <li><a href="/frontend/htmlintro.html">Getting Started with HTML</a></li>
+      <li><a href="/frontend/cssintro.html">CSS for Beginners</a></li>
+      <li><a href="/frontend/jsintro.html">JavaScript Crash Course</a></li>
+    </ul>
+  </section>
+
+  <section id="instagram">
+    <h2>Follow Me on Instagram</h2>
+    <div class="instagram-feed">
+      <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+    </div>
+  </section>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+
+  <br><br>
+
+  <footer>
+    <p>© 2025 HackEr404 - All rights reserved.</p>
+  </footer>
+  
+  <script>
+  let pages = [];
+  
+  fetch("/searchdata.json")  // load the search data once
+  .then(res => res.json())
+  .then(data => {
+  pages = data;
+  });
+  
+  function searchSite() {
+  const input = document.getElementById("globalSearch").value.toLowerCase();
+  const resultsDiv = document.getElementById("searchResults");
+  resultsDiv.innerHTML = '';
+  
+  if (input.length === 0) return;
+  
+  const matches = pages.filter(page =>
+  page.title.toLowerCase().includes(input) ||
+  page.keywords.toLowerCase().includes(input)
+  );
+  
+  if (matches.length === 0) {
+  resultsDiv.innerHTML = "<p>No results found.</p>";
+  return;
+  }
+  
+  matches.forEach(page => {
+  const link = document.createElement("a");
+  link.href = page.url;
+  link.textContent = page.title;
+  resultsDiv.appendChild(link);
+  });
+  }
+  </script>
+
+</body>
+</html>
