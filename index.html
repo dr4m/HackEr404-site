@@ -129,7 +129,8 @@ window.onscroll = function() {
 </nav>
 
 <div class="search-container">
-  <input type="text" id="searchInput" placeholder="Search tutorials, tools, tricks...">
+  <input type="text" id="globalSearchInput" placeholder="Search HackEr404..." onkeyup="globalSearch()" />
+  <ul id="searchResults" class="search-results"></ul>
 </div>
 
 <script>
