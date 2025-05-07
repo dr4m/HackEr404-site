@@ -255,7 +255,7 @@ Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials
 let searchData = [];
 
 // Load JSON data from tools/data.json
-fetch('/tools/data.json')
+fetch('/tools/tools.json')
   .then(response => response.json())
   .then(data => searchData = data)
   .catch(error => console.error('Error loading JSON:', error));
