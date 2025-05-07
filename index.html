@@ -133,21 +133,6 @@ window.onscroll = function() {
   <ul id="searchResults" class="search-results"></ul>
 </div>
 
-<script>
-document.getElementById('searchInput').addEventListener('keyup', function() {
-  const searchValue = this.value.toLowerCase();
-  const cards = document.querySelectorAll('.card');
-
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    if (text.includes(searchValue)) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-});
-</script>
 
 <script>
 const toggleBtn = document.getElementById('menu-toggle');
@@ -250,6 +235,8 @@ Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials
     <footer>
         <p>© 2025 hackEr404 - All rights reserved.</p>
     </footer>
+
+  
 
   <script>
 let searchData = [];
