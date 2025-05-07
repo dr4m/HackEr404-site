@@ -92,12 +92,12 @@
     });
   </script>
 
-  <!-- Search Bar -->
   <div class="search-container">
-    <input type="text" id="globalSearchInput" placeholder="Search HackEr404..." onkeyup="globalSearch()" />
-    <ul id="searchResults" class="search-results"></ul>
+  <input type="text" id="searchInput" placeholder="Search tutorials..." onkeyup="searchFunction()" />
+<ul id="searchResults" style="display: none; list-style-type: none; padding: 0;"></ul>
   </div>
 
+  
   <!-- Slogan Section -->
   <div class="slogan" id="myslogan">
     <h1 class="intro">Welcome to HackEr404.</h1><br>
@@ -170,39 +170,7 @@
     }
     typeWriter();
   </script>
-
-  <!-- Search Script -->
-  <script>
-    let searchData = [];
-    fetch('/tools/tools.json')
-      .then(response => response.json())
-      .then(data => searchData = data)
-      .catch(error => console.error('Error loading JSON:', error));
-
-    function globalSearch() {
-      const input = document.getElementById("globalSearchInput").value.toLowerCase();
-      const resultsContainer = document.getElementById("searchResults");
-      resultsContainer.innerHTML = "";
-
-      if (input.length < 2) {
-        resultsContainer.style.display = "none";
-        return;
-      }
-
-      const filtered = searchData.filter(item =>
-        item.title.toLowerCase().includes(input) ||
-        item.description.toLowerCase().includes(input)
-      );
-
-      filtered.forEach(item => {
-        const li = document.createElement("li");
-        li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
-        resultsContainer.appendChild(li);
-      });
-
-      resultsContainer.style.display = filtered.length ? "block" : "none";
-    }
-  </script>
-
+<script src="search.js"></script>
+  
 </body>
 </html>
