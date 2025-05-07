@@ -1,278 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LH20MJN01Q');
+  </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LH20MJN01Q');
-</script>
   <meta name="google-site-verification" content="YUXTVfjPTrV9tWdMxK9EmrmIdy64Tiwfc5PemBGkcYs" />
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hacker404</title>
-  
-  <link rel="stylesheet" href="mystyles.css">
-  
-
-  <!-- Character Set -->
-  <meta charset="UTF-8">
-  
-  <!-- Viewport for Responsive Design -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Title of the Page -->
-  <title>HackEr404 - Ethical Hacking & Cybersecurity Tutorials</title>
-  
-  <!-- Meta Description for SEO -->
   <meta name="description" content="HackEr404 is your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn tips, tricks, and tools used by professionals.">
-  
-  <!-- Meta Keywords for SEO -->
   <meta name="keywords" content="ethical hacking, bug bounty, cybersecurity, penetration testing, SQL injection, XSS, security tools, networking, bug bounty, hacking free course">
-  
-  <!-- Meta Author -->
   <meta name="author" content="HackEr404">
-  
-  <!-- Open Graph Tags (for Facebook sharing) -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <title>HackEr404 - Ethical Hacking & Cybersecurity Tutorials</title>
+
+  <!-- Open Graph -->
   <meta property="og:title" content="HackEr404 - Ethical Hacking & Cybersecurity Tutorials">
   <meta property="og:description" content="Learn tips, tricks, and tools for ethical hacking and cybersecurity at HackEr404.">
   <meta property="og:image" content="404logo.jpg">
   <meta property="og:url" content="https://hacker404.site">
   <meta property="og:type" content="website">
-  
-  <!-- Twitter Card Tags -->
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="HackEr404 - Ethical Hacking & Cybersecurity Tutorials">
   <meta name="twitter:description" content="HackEr404 offers tutorials on ethical hacking, bug bounty, and cybersecurity, with practical tips and tools.">
   <meta name="twitter:image" content="404logo.jpg">
   <meta name="twitter:creator" content="@hacker404_com">
-  
-  <!-- Favicon -->
+
   <link rel="icon" href="favicon.png" type="image/x-icon">
-  
-  <!-- Link to External Stylesheets -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="mystyles.css">
-  
-  <!-- Preconnect to speed up external resource loading (for faster performance) -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Link to Google Fonts (if needed) -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- Apple Touch Icon for mobile devices -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  
-  <!-- Meta Tags for PWA (Progressive Web App) -->
-  <meta name="theme-color" content="#000000">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  
-  <!-- Additional meta tags for better mobile and social sharing -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
 </head>
 
-
 <body>
-<div id="preloader">
-  <h2>Loading HackEr404...</h2>
-</div>
 
-<script>
-// Preloader
-window.addEventListener("load", function(){
-  document.getElementById('preloader').style.display = 'none';
-});
-</script>
-
-<div id="progressbar"></div>
-<script>
-// Scroll Progress Bar
-window.onscroll = function() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  document.getElementById("progressbar").style.width = scrolled + "%";
-};
-</script>
-
-<nav>
-  <!-- Logo Left Side -->
-  <div class="logo">
-    <img src="404logo.jpg" alt="HACKER 404 Logo">
-  </div>
-  
-  
-
-  <!-- Menu Middle -->
-  <div class="menu" id="menu">
-    <a href="index.html">Home</a>
-    <a href="tools/tools.html">Tools</a>
-    <a href="networking/networking1.html" >Networking</a>
-    <a href="#" >Frontend</a>
-    <a href="about.html">About</a>
-    <a href="#">Contact</a>
-    
-  </div>
-
-  <!-- Toggle Button Right Side -->
-  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-  
-  
-</nav>
-
-<div class="search-container">
-  <input type="text" id="globalSearchInput" placeholder="Search HackEr404..." onkeyup="globalSearch()" />
-  <ul id="searchResults" class="search-results"></ul>
-</div>
-
-
-<script>
-const toggleBtn = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu');
-
-toggleBtn.addEventListener('click', () => {
-  menu.classList.toggle('show');
-});
-</script>
-
-<div class="slogan" id="myslogan">
-
-<h1 class="intro">Wellcome to HackEr404.</h1>
-<br>
-
-
-<h1 id="typewriter" class="intro"></h1>
-
-<h1 class="disc">
-Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn the best tips, tricks, and tools used by the pros.
-</h1>
-
-<br>
-</div>
-
-
-
-
-
-<!-- Latest Content Section -->
-    <section id="content">
-        <h2>Latest Content</h2>
-        <div class="content-cards">
-            <div class="card">
-                <h3 style="color:green;">Hacking Tools</h3>
-                <p>Explore the essential tools used by ethical hackers and cybersecurity professionals like Nmap, Wireshark, Burp Suite, Metasploit, SQLMap. Each tool is explained with its purpose, features, commands, real-world use cases, and how to install or use it effectively in penetration testing and vulnerability assessment.</p>
-                <a href="tools/tools.html">Read More</a>
-            </div>
-            <div class="card">
-                <h3>Bug Bounty Walkthrough</h3>
-                <p>Step-by-step guide on submitting your first bug bounty report and earning money.</p>
-                <a href="bugbountytut1.html">Read More</a>
-            </div>
-            <div class="card">
-                <h3>Networking</h3>
-                <p>Understand the foundation of the internet. This card covers the essential networking knowledge every hacker and developer must know.</p>
-                <a href="networking/networking1.html">Read More</a>
-            </div>
-            
-            <div class="card">
-            <h3>Feontend Web Development</h3>
-            <p>Learn to build beautiful, responsive websites using HTML, CSS, JavaScript, and frameworks. Great for beginners and creators.</p>
-            <a href="myfrontend/frontend.html">Read More</a>
-            </div>
-        </div>
-    </section>
-    
-    
-    <section id="top-tutorials">
-    <h2>Top Tutorials</h2>
-    <ul class="top-tutorials-list">
-    <li><a href="tools/sqltut01.html">How to Perform SQL Injection</a></li>
-    <li><a href="tools/tools.html">Top 10 Recon Tools for Bug Bounty</a></li>
-    <li><a href="#">Beginner's Guide to XSS (Cross-Site Scripting)</a></li>
-    </ul>
-    </section>
-    
-    
-
-    <!-- Instagram Feed Section -->
-    <section id="instagram">
-        <h2>Follow Me on Instagram</h2>
-        <div class="instagram-feed">
-            <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
-        </div>
-    </section>
-    
-    
-   
-
-   
-   <script>
-   // Typewriter Effect
-   const text = 'Where Hacking Reveals The Real Internet';
-   let index = 0;
-   function typeWriter() {
-   if (index < text.length) {
-   document.getElementById('typewriter').innerHTML += text.charAt(index);
-   index++;
-   setTimeout(typeWriter, 100); // typing speed
-   }
-   }
-   typeWriter();
-   </script>
-   
-   
-   
-
-    <!-- Footer Section -->
-    <footer>
-        <p>© 2025 hackEr404 - All rights reserved.</p>
-    </footer>
-
-  
-
+  <!-- Preloader -->
+  <div id="preloader"><h2>Loading HackEr404...</h2></div>
   <script>
-let searchData = [];
-
-// Load JSON data from tools/data.json
-fetch('/tools/tools.json')
-  .then(response => response.json())
-  .then(data => searchData = data)
-  .catch(error => console.error('Error loading JSON:', error));
-
-// Search function
-function globalSearch() {
-  const input = document.getElementById("globalSearchInput").value.toLowerCase();
-  const resultsContainer = document.getElementById("searchResults");
-  resultsContainer.innerHTML = "";
-  
-  if (input.length < 2) {
-    resultsContainer.style.display = "none";
-    return;
-  }
-
-  const filtered = searchData.filter(item => 
-    item.title.toLowerCase().includes(input) || 
-    item.description.toLowerCase().includes(input)
-  );
-
-  filtered.forEach(item => {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
-    resultsContainer.appendChild(li);
-  });
-
-  resultsContainer.style.display = filtered.length ? "block" : "none";
-}
+    window.addEventListener("load", () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
   </script>
 
+  <!-- Scroll Progress Bar -->
+  <div id="progressbar"></div>
+  <script>
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressbar").style.width = scrolled + "%";
+    };
+  </script>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="404logo.jpg" alt="HACKER 404 Logo">
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="tools/tools.html">Tools</a>
+      <a href="networking/networking1.html">Networking</a>
+      <a href="#">Frontend</a>
+      <a href="about.html">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="globalSearchInput" placeholder="Search HackEr404..." onkeyup="globalSearch()" />
+    <ul id="searchResults" class="search-results"></ul>
+  </div>
+
+  <!-- Slogan Section -->
+  <div class="slogan" id="myslogan">
+    <h1 class="intro">Welcome to HackEr404.</h1><br>
+    <h1 id="typewriter" class="intro"></h1>
+    <h1 class="disc">
+      Your go-to resource for ethical hacking, bug bounty, and cybersecurity tutorials. Learn the best tips, tricks, and tools used by the pros.
+    </h1><br>
+  </div>
+
+  <!-- Latest Content -->
+  <section id="content">
+    <h2>Latest Content</h2>
+    <div class="content-cards">
+      <div class="card">
+        <h3 style="color:green;">Hacking Tools</h3>
+        <p>Explore the essential tools used by ethical hackers like Nmap, Burp Suite, SQLMap, and more.</p>
+        <a href="tools/tools.html">Read More</a>
+      </div>
+      <div class="card">
+        <h3>Bug Bounty Walkthrough</h3>
+        <p>Step-by-step guide on submitting your first bug bounty report and earning money.</p>
+        <a href="bugbountytut1.html">Read More</a>
+      </div>
+      <div class="card">
+        <h3>Networking</h3>
+        <p>Understand networking fundamentals every hacker must know.</p>
+        <a href="networking/networking1.html">Read More</a>
+      </div>
+      <div class="card">
+        <h3>Frontend Web Development</h3>
+        <p>Learn to build responsive websites using HTML, CSS, JavaScript, and frameworks.</p>
+        <a href="myfrontend/frontend.html">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Tutorials -->
+  <section id="top-tutorials">
+    <h2>Top Tutorials</h2>
+    <ul class="top-tutorials-list">
+      <li><a href="tools/sqltut01.html">How to Perform SQL Injection</a></li>
+      <li><a href="tools/tools.html">Top 10 Recon Tools for Bug Bounty</a></li>
+      <li><a href="#">Beginner's Guide to XSS (Cross-Site Scripting)</a></li>
+    </ul>
+  </section>
+
+  <!-- Instagram Section -->
+  <section id="instagram">
+    <h2>Follow Me on Instagram</h2>
+    <div class="instagram-feed">
+      <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>
+
+  <!-- Typewriter Script -->
+  <script>
+    const text = 'Where Hacking Reveals The Real Internet';
+    let index = 0;
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById('typewriter').innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    typeWriter();
+  </script>
+
+  <!-- Search Script -->
+  <script>
+    let searchData = [];
+    fetch('/tools/tools.json')
+      .then(response => response.json())
+      .then(data => searchData = data)
+      .catch(error => console.error('Error loading JSON:', error));
+
+    function globalSearch() {
+      const input = document.getElementById("globalSearchInput").value.toLowerCase();
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = "";
+
+      if (input.length < 2) {
+        resultsContainer.style.display = "none";
+        return;
+      }
+
+      const filtered = searchData.filter(item =>
+        item.title.toLowerCase().includes(input) ||
+        item.description.toLowerCase().includes(input)
+      );
+
+      filtered.forEach(item => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
+        resultsContainer.appendChild(li);
+      });
+
+      resultsContainer.style.display = filtered.length ? "block" : "none";
+    }
+  </script>
 
 </body>
 </html>
