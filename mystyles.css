@@ -29,6 +29,33 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  background: #1a1a1a;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  z-index: 999;
+}
+
+.search-results li {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.search-results li a {
+  text-decoration: none;
+  color: #00ffcc;
+  display: block;
+}
+
+.search-results li:hover {
+  background-color: #333;
+}
+
 /* Sidebar Panel */
 .right-slidebar {
   height: 100%;
