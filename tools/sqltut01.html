@@ -236,7 +236,7 @@ toggleBtn.addEventListener('click', () => {
 
   <pre><code>SELECT * FROM users WHERE username = 'admin' AND password = '1234';</code></pre>
 
-  <p>If an attacker inputs:</p>
+  <p>If an attaker inputs:</p>
   <pre><code>Username: admin' -- 
 Password: (anything)</code></pre>
 
@@ -291,50 +291,40 @@ $stmt->execute([$username, $password]);
   <p>© 2025 hackEr404 - All rights reserved.</p>
 </footer>
 
-  <script>
-  let toolPages = [];
-let toolsLoaded = false;
+<script>
+let searchData = [];
 
-fetch('tools.json')
+// Load JSON data from tools/data.json
+fetch('/tools/tools.json')
   .then(response => response.json())
-  .then(data => {
-    toolPages = data;
-    toolsLoaded = true;
-  })
-  .catch(error => {
-    console.error('Error loading tools.json:', error);
-  });
+  .then(data => searchData = data)
+  .catch(error => console.error('Error loading JSON:', error));
 
-function searchFromTools() {
-  if (!toolsLoaded) {
-    alert("Tools are still loading. Please try again in a moment.");
-    return;
-  }
-
-  const input = document.getElementById("globalSearch").value.toLowerCase();
+// Search function
+function globalSearch() {
+  const input = document.getElementById("globalSearchInput").value.toLowerCase();
   const resultsContainer = document.getElementById("searchResults");
-  resultsContainer.innerHTML = '';
-
-  const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
-
-  if (filtered.length === 0) {
-    const message = document.createElement("li");
-    message.textContent = "No results found. Please go to the tools folder manually for more tools.";
-    message.style.color = "red";
-    resultsContainer.appendChild(message);
+  resultsContainer.innerHTML = "";
+  
+  if (input.length < 2) {
+    resultsContainer.style.display = "none";
     return;
   }
 
-  filtered.forEach(tool => {
+  const filtered = searchData.filter(item => 
+    item.title.toLowerCase().includes(input) || 
+    item.description.toLowerCase().includes(input)
+  );
+
+  filtered.forEach(item => {
     const li = document.createElement("li");
-    const link = document.createElement("a");
-    link.href = tool.url;
-    link.textContent = tool.title;
-    li.appendChild(link);
+    li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
     resultsContainer.appendChild(li);
   });
+
+  resultsContainer.style.display = filtered.length ? "block" : "none";
 }
-  </script>
+</script>
 
 </body>
 </html>
