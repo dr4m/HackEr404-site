@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LH20MJN01Q');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tools - HackEr404</title>
+  <link rel="stylesheet" href="mystyles.css">
+ 
+ <style>
+ .p1 {
+  padding: 20px;
+ }
+ 
+ </style>
+</head>
+<body>
+
+   
+   <div id="progressbar"></div>
+   <script>
+   // Scroll Progress Bar
+   window.onscroll = function() {
+   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+   let scrolled = (winScroll / height) * 100;
+   document.getElementById("progressbar").style.width = scrolled + "%";
+   };
+   </script>
+   
+   
+   <nav>
+   <div class="logo">
+   <img src="404logo.jpg" alt="HACKER 404 Logo">
+   </div>
+   <div class="menu" id="menu">
+   <a href="index.html">Home</a>
+   <a href="tools.html">Tools</a>
+   <a href="tricks.html">Tricks</a>
+   <a href="myebooks.html">eBooks</a>
+   <a href="about.html">About</a>
+   <a href="mycontact.html">Contact</a>
+   </div>
+   <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+   </nav>
+   
+   <script>
+   function toggleMenu() {
+   document.querySelector('.menu').classList.toggle('show');
+   }
+   
+   function searchTools() {
+   const input = document.getElementById("toolSearch").value.toLowerCase();
+   const cards = document.querySelectorAll(".tool-card");
+   cards.forEach(card => {
+   const title = card.querySelector("h3").textContent.toLowerCase();
+   card.style.display = title.includes(input) ? "block" : "none";
+   });
+   }
+   </script>
+   
+   <div class="p1">
+   <br>
+    <h1>Privacy Policy</h1>
+    <p>
+      At hackEr404.site, we value your privacy. This Privacy Policy explains how we collect, use, and protect your data.
+    </p>
+    
+    <br>
+    <h2>Information We Collect</h2>
+    <p>We may collect IP addresses, browser information, and cookies for analytics and ad personalization.</p>
+
+<br>
+    <h2>How We Use Information</h2>
+    <p>We use this information to improve user experience and to serve relevant advertisements via Ezoic and other partners.</p>
+
+<br>
+    <h2>Third-Party Services</h2>
+    <p>This website uses Ezoic to provide personalization and analytic services. For more information, please see 
+      <a href="https://g.ezoic.net/privacy/hacker404.site" target="_blank">Ezoic's Privacy Policy</a>.
+    </p>
+
+
+<br>
+    <h2>Contact</h2>
+    <p>If you have any questions, contact us at hacker404contact@gmail.com</p>
+  </main>
+  
+  </div>
+  <script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('show');
+  });
+  </script>
+  <br> 
+  
+  <footer>
+  <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>
+  
+  </body>
+  </html>
+</body>
+</html>
