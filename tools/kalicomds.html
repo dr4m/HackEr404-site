@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LH20MJN01Q');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>100+ Kali Linux Commands for Beginners and Experts | Hacker404</title>
+<meta name="description" content="Explore the most used Kali Linux commands for ethical hacking, penetration testing, and cybersecurity. Simple explanations for beginners.">
+<meta name="keywords" content="Kali Linux commands, Linux basics, ethical hacking commands, terminal, cybersecurity tools, linux cheat sheet">
+
+<link rel="stylesheet" href="../mystyles.css" />
+
+</head>
+
+<body>
+
+
+<div id="progressbar">
+<script>
+window.onscroll = function() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("progressbar").style.width = scrolled + "%";
+};
+</script>
+</div>
+
+<nav>
+  <div class="logo">
+    <img src="../404logo.jpg" alt="HackEr404 Logo" />
+  </div>
+  <div class="menu" id="menu">
+    <a href="../index.html">Home</a>
+    <a href="/tools/tools.html">Tools</a>
+    <a href="/networking/networking1.html">Networking</a>
+    <a href="myebooks.html">Frontend</a>
+    <a href="../about.html">About</a>
+    <a href="mycontact.html">Contact</a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+</nav>
+
+<div class="slogan">
+  <h1>Networking Basics</h1>
+  <p style="font-size:15px;">Learn the core of computer networking from IP addresses to protocols used on the internet.</p>
+</div>
+
+<section id="tools">
+  <div class="tutorial-container">
+    <img src="/assets/kalicmd.jpg" alt="hacker404 Tutorial Preview">
+    <h1>Kali Linux Commands List (With Explanations)</h1>
+
+<h2>1. Basic Navigation Commands</h2>
+<ul>
+  <li><b>pwd</b> - Print current working directory</li>
+  <li><b>ls</b> - List files in directory</li>
+  <li><b>cd</b> - Change directory</li>
+</ul>
+
+<h2>2. File and Directory Commands</h2>
+<ul>
+  <li><b>mkdir</b> - Make a new directory</li>
+  <li><b>touch</b> - Create empty file</li>
+  <li><b>rm</b> - Remove file or directory</li>
+</ul>
+
+<h2>3. Package Management (APT)</h2>
+<ul>
+  <li><b>sudo apt update</b> - Update packages list</li>
+  <li><b>sudo apt install nmap</b> - Install a tool</li>
+</ul>
+
+<h2>4. Networking Commands</h2>
+<ul>
+  <li><b>ifconfig</b> - Show network interfaces</li>
+  <li><b>ping</b> - Test connection to a host</li>
+</ul>
+
+<h2>5. Hacking Tools Commands (Kali Specific)</h2>
+<ul>
+  <li><b>nmap</b> - Network scanner</li>
+  <li><b>sqlmap</b> - SQL injection testing tool</li>
+  <li><b>msfconsole</b> - Launch Metasploit</li>
+</ul>
+
+<h2>6. Useful Shortcuts</h2>
+<ul>
+  <li><b>clear</b> - Clear terminal screen</li>
+  <li><b>history</b> - Show all used commands</li>
+</ul>
+
+</div>
+
+<section id="next-tutorial">
+    <h2>Continuation</h2>
+    <div class="next-tutorial-card">
+      <img src="/assets/network03.jpg" alt="Next Tutorial Preview">
+      <div class="next-tutorial-content">
+        <h3>IP Addressing & Subnetting - HackEr404</h3>
+        <p>IP address tutorial, subnetting explained, CIDR, IP classes, private vs public IP, ethical hacking networking, subnet mask, hacker404 networking</p>
+        </p>
+        <a href="network2.html">Read Next →</a>
+      </div>
+    </div>
+  </section>
+
+<section id="top-tutorials">
+  <h2>Top Tutorials</h2>
+  <ul class="top-tutorials-list">
+    <li><a href="../bugbountytut01.html">Beginner's Guide to Bug Bounty</a></li>
+    <li><a href="tools.html">Top 5 Tools for Web Pentesting</a></li>
+    <li><a href="#">How to Find Subdomains for Recon</a></li>
+  </ul>
+</section>
+
+
+<section id="instagram">
+  <h2>Follow Me on Instagram</h2>
+  <div class="instagram-feed">
+    <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+  </div>
+</section>
+
+<script>
+const toggleBtn = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+</script>
+
+<footer>
+  <p>© 2025 HackEr404 - All rights reserved.</p>
+</footer>
+
+<script>
+let toolPages = [];
+let toolsLoaded = false;
+
+fetch('tools.json')
+.then(response => response.json())
+.then(data => {
+  toolPages = data;
+  toolsLoaded = true;
+})
+.catch(error => {
+  console.error('Error loading tools.json:', error);
+});
+
+function searchFromTools() {
+  if (!toolsLoaded) {
+    alert("Tools are still loading. Please try again in a moment.");
+    return;
+  }
+
+  const input = document.getElementById("globalSearch").value.toLowerCase();
+  const resultsContainer = document.getElementById("searchResults");
+  resultsContainer.innerHTML = '';
+
+  const filtered = toolPages.filter(tool => tool.title.toLowerCase().includes(input));
+
+  if (filtered.length === 0) {
+    const message = document.createElement("li");
+    message.textContent = "No results found.";
+    message.style.color = "red";
+    resultsContainer.appendChild(message);
+    return;
+  }
+
+  filtered.forEach(tool => {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = tool.url;
+    link.textContent = tool.title;
+    li.appendChild(link);
+    resultsContainer.appendChild(li);
+  });
+}
+</script>
+
+</body>
+</html>
