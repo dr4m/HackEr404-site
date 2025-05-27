@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced Kali Linux Commands - hackEr404</title>
+  <meta name="description" content="Explore advanced Kali Linux terminal commands with practical examples. Learn tools like nmap, metasploit, sqlmap and more on hackEr404.">
+  <meta name="keywords" content="kali linux advanced commands, metasploit, nmap, sqlmap, kali tools, hacker404 kali">
+  <link rel="stylesheet" href="mystyles.css">
+  <style>
+    .section { padding: 20px; line-height: 1.8; }
+    h2 { color: #00ffae; }
+    code { background: #222; padding: 2px 6px; border-radius: 4px; color: #0f0; }
+  </style>
+</head>
+<body>
+
+  <div id="progressbar"></div>
+  <script>
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressbar").style.width = scrolled + "%";
+    };
+  </script>
+
+  <nav>
+    <div class="logo">
+      <img src="404logo.jpg" alt="HackEr404 Logo">
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="kali-linux-commands.html">Kali Commands</a>
+      <a href="about.html">About</a>
+      <a href="mycontact.html">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>
+
+  <div class="section">
+    <h1>Advanced Kali Linux Commands</h1>
+    <p>Welcome to the second part of Kali Linux terminal commands. These commands include some powerful tools used in penetration testing.</p>
+
+    <h2>1. Nmap</h2>
+    <p>Used to scan open ports and detect services on a target.</p>
+    <code>nmap -sV target.com</code>
+
+    <h2>2. Metasploit</h2>
+    <p>Powerful framework for developing and executing exploits.</p>
+    <code>msfconsole</code>
+
+    <h2>3. Sqlmap</h2>
+    <p>Automates the process of detecting and exploiting SQL injection.</p>
+    <code>sqlmap -u "http://target.com/page.php?id=1" --dbs</code>
+
+    <h2>4. Hydra</h2>
+    <p>Brute-force login cracker tool.</p>
+    <code>hydra -l admin -P /usr/share/wordlists/rockyou.txt ftp://target.com</code>
+
+    <h2>5. Nikto</h2>
+    <p>Scans websites for vulnerabilities.</p>
+    <code>nikto -h http://target.com</code>
+
+    <h2>6. Burp Suite</h2>
+    <p>GUI tool used to intercept and analyze HTTP/S traffic.</p>
+    <code>burpsuite</code>
+
+    <h2>7. Netcat</h2>
+    <p>Network tool for debugging and investigation.</p>
+    <code>nc -lvp 4444</code>
+
+    <h2>8. John the Ripper</h2>
+    <p>Password cracking tool.</p>
+    <code>john --wordlist=passwords.txt hashes.txt</code>
+
+    <br>
+    <h2>Need More?</h2>
+    <p>We will continue this tutorial in the next page with wireless attacks and system exploits.</p>
+
+    <div style="text-align:right;">
+      <a href="kali-linux-commands3.html" style="font-weight:bold;">Next: Wireless & Exploitation Tools →</a>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+
+  <footer>
+    <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
