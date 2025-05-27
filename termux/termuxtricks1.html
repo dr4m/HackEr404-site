@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH20MJN01Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LH20MJN01Q');
+  </script>
+  
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hidden Termux Tricks Without Root - HackEr404</title>
+  <meta name="description" content="Discover the best hidden tricks in Termux that work without root. Learn powerful commands and tools for ethical hacking using Termux on Android.">
+  <meta name="keywords" content="termux tricks, no root termux, ethical hacking, termux commands, hidden termux tools, hacking in termux, instagram hacking in termux">
+  <link rel="stylesheet" href="mystyles.css">
+  
+  <style>
+    .section {
+      padding: 20px;
+    }
+    pre {
+      background: #111;
+      color: #0f0;
+      padding: 10px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progressbar"></div>
+  <script>
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressbar").style.width = scrolled + "%";
+    };
+  </script>
+
+  <nav>
+    <div class="logo">
+      <img src="404logo.jpg" alt="HACKER 404 Logo">
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="tricks.html">Tricks</a>
+      <a href="myebooks.html">eBooks</a>
+      <a href="about.html">About</a>
+      <a href="mycontact.html">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </nav>
+  
+    <!-- Search Bar UI -->
+<input type="text" id="searchInput" placeholder="Search tutorials..." onkeyup="searchFunction()" />
+<ul id="searchResults" style="display: none; list-style-type: none; padding: 0;"></ul>
+
+
+<!-- Style for Search Bar -->
+<style>
+  #searchInput {
+    width: 80%;
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  #searchResults {
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    z-index: 1000;
+  }
+  #searchResults li {
+    padding: 8px;
+  }
+  #searchResults li a {
+    text-decoration: none;
+    color: #333;
+  }
+  #searchResults li:hover {
+    background-color: #f0f0f0;
+  }
+</style>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('menu').classList.toggle('show');
+    });
+  </script>
+
+  <div class="section">
+    <h1>Hidden Termux Tricks Without Root</h1>
+    <p>Hi! Welcome to hackEr404. In this page, you'll explore powerful and hidden Termux tricks that work even without root access. Perfect for beginners and intermediate Android users!</p>
+
+<br>
+    <h2>1. Enable Full Storage Access</h2>
+    <p>Use this command to access internal storage:</p>
+    <pre>termux-setup-storage</pre>
+    <p>Then access your files:</p>
+    <pre>cd /storage/emulated/0</pre>
+
+    <h2>2. Use Nmap Without Root</h2>
+    <pre>
+pkg update && pkg upgrade
+pkg install nmap
+nmap 192.168.1.1
+    </pre>
+
+    <h2>3. Use Multiple Windows in Termux</h2>
+    <p>Use Tmux to work with multiple shells:</p>
+    <pre>pkg install tmux</pre>
+    <p>Then press <strong>Ctrl + B</strong> and <strong>C</strong> to open a new window.</p>
+
+    <h2>4. Install GUI Tools (No Root)</h2>
+    <p>Install GUI apps like xeyes:</p>
+    <pre>
+pkg install x11-repo
+pkg install xeyes xclock
+    </pre>
+
+    <h2>5. Educational Keylogger (No Root)</h2>
+    <p>Only for educational use on your own device!</p>
+    <pre>
+git clone https://github.com/D4Vinci/Keylogger.git
+cd Keylogger
+python keylogger.py
+    </pre>
+
+    <h2>Conclusion</h2>
+    <p>These are just a few hidden Termux tricks you can try without root. For more powerful Termux and Kali Linux tutorials, explore the rest of our site!</p>
+  </div>
+
+<br>
+
+<section id="instagram">
+  <h2>Follow Me on Instagram</h2>
+  <div class="instagram-feed">
+    <a href="https://instagram.com/hacker404.com_" target="_blank">View My Instagram</a>
+  </div>
+</section>
+
+  <footer>
+    <p>© 2025 hackEr404 - All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
