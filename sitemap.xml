@@ -66,6 +66,14 @@
      <loc>https://hacker404.site/ads.txt</loc>
   </url>
 
+  <url>
+    <loc> https://hacker404.site/tools/kalicomds.html</loc>
+  </url>
+
+  <url>
+     <loc>https://hacker404.site/tools/kalicomds2.html</loc>
+  </url>
+
   
   <!-- Add more pages like this -->
 </urlset>
