@@ -62,7 +62,9 @@
      <loc>https://hacker404.site/myfrontend/frontend.html</loc>
   </url>
 
-  
+  <url> 
+     <loc>https://hacker404.site/ads.txt</loc>
+  </url>
 
   
   <!-- Add more pages like this -->
